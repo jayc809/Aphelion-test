@@ -15,7 +15,7 @@
 		69CDAA2D268E181800CD95A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2C268E181800CD95A3 /* TestView.swift */; };
 		69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2E268E184500CD95A3 /* TapTile.swift */; };
 		69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA31268E187400CD95A3 /* SlideTile.swift */; };
-		69CDAA34268E188200CD95A3 /* HoldTIle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA33268E188200CD95A3 /* HoldTIle.swift */; };
+		69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA33268E188200CD95A3 /* HoldTile.swift */; };
 		69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA35268E189C00CD95A3 /* ComboElement.swift */; };
 		69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */; };
 		69CDAA3A268E18BA00CD95A3 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */; };
@@ -44,7 +44,7 @@
 		69CDAA2C268E181800CD95A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		69CDAA2E268E184500CD95A3 /* TapTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTile.swift; sourceTree = "<group>"; };
 		69CDAA31268E187400CD95A3 /* SlideTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTile.swift; sourceTree = "<group>"; };
-		69CDAA33268E188200CD95A3 /* HoldTIle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldTIle.swift; sourceTree = "<group>"; };
+		69CDAA33268E188200CD95A3 /* HoldTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldTile.swift; sourceTree = "<group>"; };
 		69CDAA35268E189C00CD95A3 /* ComboElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboElement.swift; sourceTree = "<group>"; };
 		69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreElement.swift; sourceTree = "<group>"; };
 		69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			children = (
 				69CDAA2E268E184500CD95A3 /* TapTile.swift */,
 				69CDAA31268E187400CD95A3 /* SlideTile.swift */,
-				69CDAA33268E188200CD95A3 /* HoldTIle.swift */,
+				69CDAA33268E188200CD95A3 /* HoldTile.swift */,
 				69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */,
 				69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */,
 				69CDAA35268E189C00CD95A3 /* ComboElement.swift */,
@@ -274,7 +274,7 @@
 				699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */,
 				69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */,
 				69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */,
-				69CDAA34268E188200CD95A3 /* HoldTIle.swift in Sources */,
+				69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */,
 				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
 				69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */,
