@@ -11,6 +11,26 @@
 		699E9C79267F77DE00AFFF8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C78267F77DE00AFFF8D /* ContentView.swift */; };
 		699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7A267F77DF00AFFF8D /* Assets.xcassets */; };
 		699E9C7E267F77DF00AFFF8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7D267F77DF00AFFF8D /* Preview Assets.xcassets */; };
+		69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2A268E180300CD95A3 /* GameView.swift */; };
+		69CDAA2D268E181800CD95A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2C268E181800CD95A3 /* TestView.swift */; };
+		69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2E268E184500CD95A3 /* TapTile.swift */; };
+		69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA31268E187400CD95A3 /* SlideTile.swift */; };
+		69CDAA34268E188200CD95A3 /* HoldTIle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA33268E188200CD95A3 /* HoldTIle.swift */; };
+		69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA35268E189C00CD95A3 /* ComboElement.swift */; };
+		69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */; };
+		69CDAA3A268E18BA00CD95A3 /* PauseMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */; };
+		69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3B268E18CF00CD95A3 /* TestTile.swift */; };
+		69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3D268E18E000CD95A3 /* GameModel.swift */; };
+		69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3F268E18EB00CD95A3 /* Gif.swift */; };
+		69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA41268E18FE00CD95A3 /* Video.swift */; };
+		69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA43268E190C00CD95A3 /* Sound.swift */; };
+		69CDAA47268E192700CD95A3 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA46268E192700CD95A3 /* Global.swift */; };
+		69CDAA4C268E194600CD95A3 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA49268E194600CD95A3 /* GillSans.ttc */; };
+		69CDAA4D268E194600CD95A3 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA4A268E194600CD95A3 /* Avenir Next.ttc */; };
+		69CDAA55268E19A200CD95A3 /* GHOST.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA52268E19A100CD95A3 /* GHOST.mp4 */; };
+		69CDAA56268E19A200CD95A3 /* KING.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA53268E19A100CD95A3 /* KING.mp4 */; };
+		69CDAA57268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA54268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 */; };
+		69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA59268E19C300CD95A3 /* Notes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +40,26 @@
 		699E9C7A267F77DF00AFFF8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		699E9C7D267F77DF00AFFF8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		699E9C7F267F77DF00AFFF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69CDAA2A268E180300CD95A3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		69CDAA2C268E181800CD95A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		69CDAA2E268E184500CD95A3 /* TapTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTile.swift; sourceTree = "<group>"; };
+		69CDAA31268E187400CD95A3 /* SlideTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTile.swift; sourceTree = "<group>"; };
+		69CDAA33268E188200CD95A3 /* HoldTIle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldTIle.swift; sourceTree = "<group>"; };
+		69CDAA35268E189C00CD95A3 /* ComboElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboElement.swift; sourceTree = "<group>"; };
+		69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreElement.swift; sourceTree = "<group>"; };
+		69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseMenu.swift; sourceTree = "<group>"; };
+		69CDAA3B268E18CF00CD95A3 /* TestTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTile.swift; sourceTree = "<group>"; };
+		69CDAA3D268E18E000CD95A3 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		69CDAA3F268E18EB00CD95A3 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		69CDAA41268E18FE00CD95A3 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		69CDAA43268E190C00CD95A3 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		69CDAA46268E192700CD95A3 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		69CDAA49268E194600CD95A3 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
+		69CDAA4A268E194600CD95A3 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir Next.ttc"; sourceTree = "<group>"; };
+		69CDAA52268E19A100CD95A3 /* GHOST.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GHOST.mp4; sourceTree = "<group>"; };
+		69CDAA53268E19A100CD95A3 /* KING.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = KING.mp4; sourceTree = "<group>"; };
+		69CDAA54268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RACINGINTOTHENIGHT.mp4; sourceTree = "<group>"; };
+		69CDAA59268E19C300CD95A3 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +93,11 @@
 			isa = PBXGroup;
 			children = (
 				699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */,
-				699E9C78267F77DE00AFFF8D /* ContentView.swift */,
 				699E9C7A267F77DF00AFFF8D /* Assets.xcassets */,
-				699E9C7F267F77DF00AFFF8D /* Info.plist */,
+				69CDAA27268E17DB00CD95A3 /* Views */,
+				69CDAA29268E17EE00CD95A3 /* ContentModels */,
+				69CDAA28268E17E100CD95A3 /* Models */,
+				69CDAA45268E191600CD95A3 /* Resources */,
 				699E9C7C267F77DF00AFFF8D /* Preview Content */,
 			);
 			path = Aphelion1;
@@ -67,6 +109,88 @@
 				699E9C7D267F77DF00AFFF8D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		69CDAA27268E17DB00CD95A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA2A268E180300CD95A3 /* GameView.swift */,
+				69CDAA2C268E181800CD95A3 /* TestView.swift */,
+				699E9C78267F77DE00AFFF8D /* ContentView.swift */,
+				69CDAA30268E185900CD95A3 /* Game Elements */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		69CDAA28268E17E100CD95A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69CDAA29268E17EE00CD95A3 /* ContentModels */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA3D268E18E000CD95A3 /* GameModel.swift */,
+				69CDAA3F268E18EB00CD95A3 /* Gif.swift */,
+				69CDAA41268E18FE00CD95A3 /* Video.swift */,
+				69CDAA43268E190C00CD95A3 /* Sound.swift */,
+			);
+			path = ContentModels;
+			sourceTree = "<group>";
+		};
+		69CDAA30268E185900CD95A3 /* Game Elements */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA2E268E184500CD95A3 /* TapTile.swift */,
+				69CDAA31268E187400CD95A3 /* SlideTile.swift */,
+				69CDAA33268E188200CD95A3 /* HoldTIle.swift */,
+				69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */,
+				69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */,
+				69CDAA35268E189C00CD95A3 /* ComboElement.swift */,
+				69CDAA3B268E18CF00CD95A3 /* TestTile.swift */,
+			);
+			path = "Game Elements";
+			sourceTree = "<group>";
+		};
+		69CDAA45268E191600CD95A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA46268E192700CD95A3 /* Global.swift */,
+				69CDAA59268E19C300CD95A3 /* Notes.swift */,
+				69CDAA51268E198600CD95A3 /* Videos */,
+				69CDAA58268E19AC00CD95A3 /* Audios */,
+				69CDAA48268E193400CD95A3 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		69CDAA48268E193400CD95A3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA4A268E194600CD95A3 /* Avenir Next.ttc */,
+				69CDAA49268E194600CD95A3 /* GillSans.ttc */,
+				699E9C7F267F77DF00AFFF8D /* Info.plist */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		69CDAA51268E198600CD95A3 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA52268E19A100CD95A3 /* GHOST.mp4 */,
+				69CDAA53268E19A100CD95A3 /* KING.mp4 */,
+				69CDAA54268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		69CDAA58268E19AC00CD95A3 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +250,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CDAA4D268E194600CD95A3 /* Avenir Next.ttc in Resources */,
 				699E9C7E267F77DF00AFFF8D /* Preview Assets.xcassets in Resources */,
+				69CDAA55268E19A200CD95A3 /* GHOST.mp4 in Resources */,
 				699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */,
+				69CDAA56268E19A200CD95A3 /* KING.mp4 in Resources */,
+				69CDAA57268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 in Resources */,
+				69CDAA4C268E194600CD95A3 /* GillSans.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +267,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CDAA2D268E181800CD95A3 /* TestView.swift in Sources */,
 				699E9C79267F77DE00AFFF8D /* ContentView.swift in Sources */,
+				69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */,
+				69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */,
 				699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */,
+				69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */,
+				69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */,
+				69CDAA34268E188200CD95A3 /* HoldTIle.swift in Sources */,
+				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
+				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
+				69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */,
+				69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */,
+				69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */,
+				69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */,
+				69CDAA3A268E18BA00CD95A3 /* PauseMenu.swift in Sources */,
+				69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */,
+				69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

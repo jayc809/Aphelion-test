@@ -1,8 +1,8 @@
 //
-//  Aphelion1App.swift
-//  Aphelion1
+//  AphelionApp.swift
+//  Aphelion
 //
-//  Created by Jay on 2021/6/20.
+//  Created by Jay on 2021/5/31.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct Aphelion1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView()
         }
     }
 }
