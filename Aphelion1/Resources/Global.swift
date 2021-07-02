@@ -44,13 +44,6 @@ class Constants {
     static let tileYMin = 0 - (UIScreen.main.bounds.height / 7)
     static let tileMoveScale = (UIScreen.main.bounds.height + 130) / ((UIScreen.main.bounds.height * 5 / 6) + 80)
     
-    //text
-    static let fontLightItalic = "Gill Sans Light Italic"
-    static let fontDivine = "Trebuchet MS Italic"
-    static let fontNormal = "Avenir Next Regular"
-    static let fontNormalItalic = "Avenir Next Medium Italic"
-    static let fontNormalUltraLight = "Avenir Next Ultra Light"
-    
     //color
     static let purple = Color(red: 159/255, green: 123/255, blue: 251/255)
     static let hue1 = Angle(degrees: -20)

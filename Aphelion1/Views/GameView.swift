@@ -66,38 +66,6 @@ struct GameView: View {
             ScoreElement(score: score)
                 .position(x: Constants.screenWidth - 110, y: 25)
             
-            //pause button
-            Button(action: {
-                
-                pauseOrResume()
-                playerManager.playPause()
-                
-            }, label: {
-                
-                if isPaused {
-                    Image(systemName: "arrowtriangle.forward")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 22)
-                        .foregroundColor(.white)
-                }
-                else {
-                    Image(systemName: "pause")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 22)
-                        .foregroundColor(.white)
-                }
-                
-            })
-            .position(x: 25, y: 20)
-            
-            //combo element
-            if combo > 0 {
-                ComboElement(combo: combo, showDivine: showDivine)
-                    .position(x: Constants.screenWidth - 130, y: Constants.screenHeight * 0.85 / 2)
-            }
-            
             //tiles
             LazyVStack {
                 
@@ -151,25 +119,42 @@ struct GameView: View {
                 }
             }
         
+            //pause button
+            if isPaused == false {
+                Button(action: {
+                    
+                    timerTile.upstream.connect().cancel()
+                    timerTest.upstream.connect().cancel()
+                    playerManager.playPause()
+                    isPaused = true
+                    
+                }, label: {
+                    Image(systemName: "pause")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 22)
+                        .foregroundColor(.white)
+                })
+                .frame(width: 500, height: 500)
+                .contentShape(Rectangle())
+                .position(x: 25, y: 20)
+            }
+            
+            //pause menu
+            if isPaused {
+                PauseMenu(isPaused: $isPaused, playerManager: playerManager)
+            }
+            
+            //combo element
+            if combo > 0 {
+                ComboElement(combo: combo, showDivine: showDivine)
+                    .position(x: Constants.screenWidth - 130, y: Constants.screenHeight * 0.85 / 2)
+            }
             
         }
         .frame(width: Constants.screenWidth, height: Constants.screenHeight)
         .background(Color.black)
         .ignoresSafeArea()
     }
-    
-    func pauseOrResume() {
-        isPaused.toggle()
-        
-        if isPaused {
-            timerTile.upstream.connect().cancel()
-            timerTest.upstream.connect().cancel()
-        }
-        else {
-            timerTile = Timer.publish(every: tileSpeed / 100, on: .main, in: .common).autoconnect()
-            timerTest = Timer.publish(every: 0.7, on: .current, in: .common).autoconnect()
-        }
-    }
-    
 }
 

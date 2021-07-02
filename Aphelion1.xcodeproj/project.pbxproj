@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6921238A268EFCAE0034F6E5 /* SpeedStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69212389268EFCAE0034F6E5 /* SpeedStepper.swift */; };
+		6921238C268F050D0034F6E5 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921238B268F050D0034F6E5 /* ThemeButton.swift */; };
 		699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */; };
 		699E9C79267F77DE00AFFF8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C78267F77DE00AFFF8D /* ContentView.swift */; };
 		699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7A267F77DF00AFFF8D /* Assets.xcassets */; };
 		699E9C7E267F77DF00AFFF8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7D267F77DF00AFFF8D /* Preview Assets.xcassets */; };
 		69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2A268E180300CD95A3 /* GameView.swift */; };
-		69CDAA2D268E181800CD95A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2C268E181800CD95A3 /* TestView.swift */; };
 		69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA2E268E184500CD95A3 /* TapTile.swift */; };
 		69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA31268E187400CD95A3 /* SlideTile.swift */; };
 		69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA33268E188200CD95A3 /* HoldTile.swift */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69212389268EFCAE0034F6E5 /* SpeedStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedStepper.swift; sourceTree = "<group>"; };
+		6921238B268F050D0034F6E5 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		699E9C73267F77DE00AFFF8D /* Aphelion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphelion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aphelion1App.swift; sourceTree = "<group>"; };
 		699E9C78267F77DE00AFFF8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		699E9C7D267F77DF00AFFF8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		699E9C7F267F77DF00AFFF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69CDAA2A268E180300CD95A3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		69CDAA2C268E181800CD95A3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		69CDAA2E268E184500CD95A3 /* TapTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTile.swift; sourceTree = "<group>"; };
 		69CDAA31268E187400CD95A3 /* SlideTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTile.swift; sourceTree = "<group>"; };
 		69CDAA33268E188200CD95A3 /* HoldTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldTile.swift; sourceTree = "<group>"; };
@@ -73,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6921238D268F069D0034F6E5 /* PauseMenuElements */ = {
+			isa = PBXGroup;
+			children = (
+				69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */,
+				6921238B268F050D0034F6E5 /* ThemeButton.swift */,
+				69212389268EFCAE0034F6E5 /* SpeedStepper.swift */,
+			);
+			path = PauseMenuElements;
+			sourceTree = "<group>";
+		};
 		699E9C6A267F77DE00AFFF8D = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				69CDAA2A268E180300CD95A3 /* GameView.swift */,
-				69CDAA2C268E181800CD95A3 /* TestView.swift */,
 				699E9C78267F77DE00AFFF8D /* ContentView.swift */,
 				69CDAA30268E185900CD95A3 /* Game Elements */,
 			);
@@ -147,7 +158,7 @@
 				69CDAA31268E187400CD95A3 /* SlideTile.swift */,
 				69CDAA33268E188200CD95A3 /* HoldTile.swift */,
 				69CDAA37268E18AB00CD95A3 /* ScoreElement.swift */,
-				69CDAA39268E18BA00CD95A3 /* PauseMenu.swift */,
+				6921238D268F069D0034F6E5 /* PauseMenuElements */,
 				69CDAA35268E189C00CD95A3 /* ComboElement.swift */,
 				69CDAA3B268E18CF00CD95A3 /* TestTile.swift */,
 			);
@@ -267,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69CDAA2D268E181800CD95A3 /* TestView.swift in Sources */,
 				699E9C79267F77DE00AFFF8D /* ContentView.swift in Sources */,
 				69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */,
 				69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */,
@@ -279,11 +289,13 @@
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
 				69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */,
 				69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */,
+				6921238C268F050D0034F6E5 /* ThemeButton.swift in Sources */,
 				69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */,
 				69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */,
 				69CDAA3A268E18BA00CD95A3 /* PauseMenu.swift in Sources */,
 				69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */,
 				69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */,
+				6921238A268EFCAE0034F6E5 /* SpeedStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

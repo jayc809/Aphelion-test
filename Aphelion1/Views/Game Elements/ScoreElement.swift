@@ -17,7 +17,7 @@ struct ScoreElement: View {
     var body: some View {
         
         Text(String(format: "%08d", currScore))
-            .font(.custom(Constants.fontLightItalic, size: 35))
+            .font(.custom("Gill Sans Light Italic", size: 35))
             .foregroundColor(.white)
             .tracking(2)
             .glow(color: .white, radius: 0.2, scale: 0.5)

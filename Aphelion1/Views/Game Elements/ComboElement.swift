@@ -24,7 +24,7 @@ struct ComboElement: View {
             VStack(spacing: 0) {
             
                 Text(combo >= 200 ? "x\(String(combo))!" : "x\(combo)")
-                    .font(Font.custom(Constants.fontLightItalic, size: 45))
+                    .font(Font.custom("Gill Sans Light Italic", size: 45))
                     .foregroundColor(.white)
                     .tracking(4)
                     .glow(color: .white, radius: 0.3, scale: 0)
@@ -32,16 +32,16 @@ struct ComboElement: View {
                     .frame(width: 200, height: 45, alignment: .trailing)
                 
                 Text("divine")
-                    .font(Font.custom(Constants.fontNormalItalic, size: 22))
+                    .font(Font.custom("Avenir Next Medium Italic", size: 22))
                     .foregroundColor(.white)
                     .tracking(1.5)
                     .glow(color: Constants.purple, radius: 1.5, scale: 0.5)
                     .frame(width: 200, height: 22, alignment: .trailing)
                     .offset(combo < 10 ? CGSize(width: -2, height: 0) :
                             combo < 100 ? CGSize(width: -10, height: 0) :
-                            combo < 200 ? CGSize(width: -14, height: 0) :
+                            combo < 200 ? CGSize(width: -18, height: 0) :
                             combo < 1000 ? CGSize(width: -24, height: 0) :
-                            CGSize(width: -32, height: 0))
+                            CGSize(width: -34, height: 0))
                     .opacity(showDivine ? 1 : 0)
             }
             
@@ -100,6 +100,6 @@ struct ComboElement: View {
 
 struct ComboElement_Previews: PreviewProvider {
     static var previews: some View {
-        ComboElement(combo: 27, showDivine: true)
+        ComboElement(combo: 127, showDivine: true)
     }
 }

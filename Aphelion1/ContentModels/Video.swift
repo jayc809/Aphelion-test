@@ -21,7 +21,8 @@ class PlayerManager : ObservableObject {
     func playPause() {
         if playing {
             player.pause()
-        } else {
+        }
+        else {
             player.play()
         }
         playing.toggle()
