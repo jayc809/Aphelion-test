@@ -24,7 +24,7 @@ struct SpeedStepper: View {
                 //minus
                 Button(action: {
                     if tileSpeed10 > 1 {
-                        tileSpeed -= 0.1
+                        tileSpeed += 0.1
                         tileSpeed10 -= 1
                     }
                 }, label: {
@@ -40,10 +40,11 @@ struct SpeedStepper: View {
                 Text(String(tileSpeed10))
                     .font(.custom("Avenir Next Regular", size: height - 5))
                     .foregroundColor(.white)
+                    .frame(width: height)
                 //plus
                 Button(action: {
                     if tileSpeed10 < 10 {
-                        tileSpeed += 0.1
+                        tileSpeed -= 0.1
                         tileSpeed10 += 1
                     }
                 }, label: {
@@ -62,6 +63,6 @@ struct SpeedStepper: View {
 
 struct SpeedStepper_Previews: PreviewProvider {
     static var previews: some View {
-        SpeedStepper(width: 94, height: 20, spacing: 18)
+        SpeedStepper(width: 94, height: 20, spacing: 12)
     }
 }

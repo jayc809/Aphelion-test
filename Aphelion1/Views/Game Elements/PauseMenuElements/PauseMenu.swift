@@ -35,7 +35,7 @@ struct PauseMenu: View {
                         //tile theme button
                         ThemeButton(height: 25)
                         //tile speed stepper
-                        SpeedStepper(width: 94, height: 20, spacing: 18)
+                        SpeedStepper(width: 94, height: 20, spacing: 12)
                         
                     }
                 }
@@ -55,18 +55,26 @@ struct PauseMenu: View {
                             .font(.custom("Avenir Next Medium", size: 25))
                     })
                     Spacer()
+                    //resume button
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Restart")
+                            .font(.custom("Avenir Next Medium", size: 25))
+                    })
+                    Spacer()
                     //leave game button
                     Button(action: {
                         
                     }, label: {
-                        Text("Leave Game")
+                        Text("Return")
                             .font(.custom("Avenir Next Medium", size: 25))
                             //.padding()
                             //.border(Color.white)
                     })
                 }
                 .frame(width: Constants.screenWidth * 0.4)
-                .padding()
+                .padding(10)
             }
         }
         .frame(width: Constants.screenWidth * 0.6, height: Constants.screenHeight * 0.4)
