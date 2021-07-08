@@ -53,9 +53,9 @@ class Constants {
     static let hue5 = Angle(degrees: 10)
     
     //youtube
+    static let apiUrl = "https://www.googleapis.com/youtube/v3"
     static let apiKey = "AIzaSyCmx_z2hKrIY9edJ3hqz3_w5B6btQxLDoU"
     static let playlistId = "PL2OjxKTsL2A7zPuwzSYUm3NVQbc3iM0_8"
-    static let apiUrl = "https://www.googleapis.com/youtube/v3"
     
 }
 

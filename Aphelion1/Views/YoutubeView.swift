@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct YoutubeView: View {
     
     @StateObject var model = VideoModel()
@@ -19,7 +21,7 @@ struct YoutubeView: View {
             TextField("Search",
                       text: $searchKeyword,
                       onCommit: {
-                            
+                            //searchWord = searchKeyword
                       }
             )
             //video list

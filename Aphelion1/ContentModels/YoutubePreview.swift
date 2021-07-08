@@ -30,7 +30,7 @@ class VideoPreview: ObservableObject {
         guard video.thumbnail != "" else { return }
         
         // Check cache before downloading data
-        if let cachedData = CacheManager.getVideoCache(video.thumbnail) {
+        if let cachedData = CacheManager.getYTVideoCache(video.thumbnail) {
             
             // Set the thumbnail imageview
             thumbnailData = cachedData
@@ -44,7 +44,7 @@ class VideoPreview: ObservableObject {
             
             if let data = response.data {
                 // Save the data in the cache
-                CacheManager.setVideoCache(video.thumbnail, data)
+                CacheManager.setYTVideoCache(video.thumbnail, data)
                 
                 // Set the image
                 DispatchQueue.main.async {
