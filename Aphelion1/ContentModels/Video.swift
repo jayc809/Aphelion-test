@@ -8,7 +8,9 @@
 import SwiftUI
 import AVKit
 
-class PlayerManager : ObservableObject {
+var videoFile = "GHOST.mp4"
+
+class PlayerManager: ObservableObject {
     
     let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: videoFile)!))
     @Published private var playing = false
@@ -29,7 +31,8 @@ class PlayerManager : ObservableObject {
     }
 }
 
-struct AVPlayerControllerRepresented : UIViewControllerRepresentable {
+struct AVPlayerControllerRepresented: UIViewControllerRepresentable {
+    
     var player : AVPlayer
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {

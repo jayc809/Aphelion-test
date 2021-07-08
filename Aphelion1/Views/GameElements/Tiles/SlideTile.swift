@@ -81,6 +81,7 @@ struct SlideTile: View {
         //miss
         else if show == 4 {
             PlayGif(fileName: "SlideMiss", maxNum: 25, frameY: Constants.slideAnimationSize)
+                .rotation3DEffect(.degrees(side == "right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
                 .scaleEffect(sizeAdjusted)
                 .hueRotation(determineHue(combo: combo))
                 .position(x: positionAdjusted.x, y: positionAdjusted.y)

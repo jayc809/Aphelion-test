@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Rotation3dView: View {
     @State var offset = CGFloat(0)
     @State var offset2 = CGFloat(0)
     @ObservedObject var gameModel = GameModel()
