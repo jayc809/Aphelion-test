@@ -51,6 +51,12 @@ class Constants {
     static let hue3 = Angle(degrees: -8)
     static let hue4 = Angle(degrees: 2)
     static let hue5 = Angle(degrees: 10)
+    
+    //youtube
+    static let apiKey = "AIzaSyCmx_z2hKrIY9edJ3hqz3_w5B6btQxLDoU"
+    static let playlistId = "PL2OjxKTsL2A7zPuwzSYUm3NVQbc3iM0_8"
+    static let apiUrl = "https://www.googleapis.com/youtube/v3"
+    
 }
 
 func determineHue(combo: Int) -> Angle {

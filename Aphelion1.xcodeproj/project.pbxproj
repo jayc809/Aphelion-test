@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		6921239126937C940034F6E5 /* YoutubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921239026937C940034F6E5 /* YoutubeView.swift */; };
 		6921239426937E710034F6E5 /* EmptyTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921239326937E700034F6E5 /* EmptyTile.swift */; };
 		692123C026975B250034F6E5 /* YoutubeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123BF26975B250034F6E5 /* YoutubeCard.swift */; };
+		692123C826975B780034F6E5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C126975B780034F6E5 /* Response.swift */; };
+		692123C926975B780034F6E5 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C226975B780034F6E5 /* VideoInfo.swift */; };
+		692123CB26975B780034F6E5 /* YoutubePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C426975B780034F6E5 /* YoutubePreview.swift */; };
+		692123CD26975B780034F6E5 /* YoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C626975B780034F6E5 /* YoutubeModel.swift */; };
+		692123CE26975B780034F6E5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C726975B780034F6E5 /* CacheManager.swift */; };
 		699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */; };
 		699E9C79267F77DE00AFFF8D /* Rotation3dView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */; };
 		699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7A267F77DF00AFFF8D /* Assets.xcassets */; };
@@ -27,7 +32,7 @@
 		69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3B268E18CF00CD95A3 /* TestTile.swift */; };
 		69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3D268E18E000CD95A3 /* GameModel.swift */; };
 		69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA3F268E18EB00CD95A3 /* Gif.swift */; };
-		69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA41268E18FE00CD95A3 /* Video.swift */; };
+		69CDAA42268E18FE00CD95A3 /* AVPLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA41268E18FE00CD95A3 /* AVPLayer.swift */; };
 		69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA43268E190C00CD95A3 /* Sound.swift */; };
 		69CDAA47268E192700CD95A3 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA46268E192700CD95A3 /* Global.swift */; };
 		69CDAA4C268E194600CD95A3 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA49268E194600CD95A3 /* GillSans.ttc */; };
@@ -36,15 +41,24 @@
 		69CDAA56268E19A200CD95A3 /* KING.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA53268E19A100CD95A3 /* KING.mp4 */; };
 		69CDAA57268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 69CDAA54268E19A200CD95A3 /* RACINGINTOTHENIGHT.mp4 */; };
 		69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CDAA59268E19C300CD95A3 /* Notes.swift */; };
+		AF576E57C8F96D955BFAEEB4 /* Pods_Aphelion1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A7395E04445E7EF20759C1 /* Pods_Aphelion1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14D6F80202EB2D30F53702D4 /* Pods-Aphelion1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aphelion1.debug.xcconfig"; path = "Target Support Files/Pods-Aphelion1/Pods-Aphelion1.debug.xcconfig"; sourceTree = "<group>"; };
+		26A7395E04445E7EF20759C1 /* Pods_Aphelion1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aphelion1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F914684F78F393951805F6 /* Pods-Aphelion1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aphelion1.release.xcconfig"; path = "Target Support Files/Pods-Aphelion1/Pods-Aphelion1.release.xcconfig"; sourceTree = "<group>"; };
 		69212389268EFCAE0034F6E5 /* SpeedStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedStepper.swift; sourceTree = "<group>"; };
 		6921238B268F050D0034F6E5 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		6921238E2691E2400034F6E5 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6921239026937C940034F6E5 /* YoutubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeView.swift; sourceTree = "<group>"; };
 		6921239326937E700034F6E5 /* EmptyTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTile.swift; sourceTree = "<group>"; };
 		692123BF26975B250034F6E5 /* YoutubeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeCard.swift; sourceTree = "<group>"; };
+		692123C126975B780034F6E5 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		692123C226975B780034F6E5 /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		692123C426975B780034F6E5 /* YoutubePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubePreview.swift; sourceTree = "<group>"; };
+		692123C626975B780034F6E5 /* YoutubeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeModel.swift; sourceTree = "<group>"; };
+		692123C726975B780034F6E5 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		699E9C73267F77DE00AFFF8D /* Aphelion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphelion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aphelion1App.swift; sourceTree = "<group>"; };
 		699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation3dView.swift; sourceTree = "<group>"; };
@@ -61,7 +75,7 @@
 		69CDAA3B268E18CF00CD95A3 /* TestTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTile.swift; sourceTree = "<group>"; };
 		69CDAA3D268E18E000CD95A3 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		69CDAA3F268E18EB00CD95A3 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
-		69CDAA41268E18FE00CD95A3 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		69CDAA41268E18FE00CD95A3 /* AVPLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPLayer.swift; sourceTree = "<group>"; };
 		69CDAA43268E190C00CD95A3 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		69CDAA46268E192700CD95A3 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		69CDAA49268E194600CD95A3 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
@@ -77,12 +91,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF576E57C8F96D955BFAEEB4 /* Pods_Aphelion1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25668BCE2A0E371D23AD07B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14D6F80202EB2D30F53702D4 /* Pods-Aphelion1.debug.xcconfig */,
+				33F914684F78F393951805F6 /* Pods-Aphelion1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		354BED957FA33EAC0A230EE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26A7395E04445E7EF20759C1 /* Pods_Aphelion1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6921238D268F069D0034F6E5 /* PauseMenuElements */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				692123BF26975B250034F6E5 /* YoutubeCard.swift */,
+				692123C726975B780034F6E5 /* CacheManager.swift */,
 			);
 			path = YoutubeElements;
 			sourceTree = "<group>";
@@ -118,6 +151,8 @@
 			children = (
 				699E9C75267F77DE00AFFF8D /* Aphelion1 */,
 				699E9C74267F77DE00AFFF8D /* Products */,
+				25668BCE2A0E371D23AD07B2 /* Pods */,
+				354BED957FA33EAC0A230EE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +202,8 @@
 		69CDAA28268E17E100CD95A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				692123C126975B780034F6E5 /* Response.swift */,
+				692123C226975B780034F6E5 /* VideoInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,9 +211,11 @@
 		69CDAA29268E17EE00CD95A3 /* ContentModels */ = {
 			isa = PBXGroup;
 			children = (
+				692123C626975B780034F6E5 /* YoutubeModel.swift */,
+				692123C426975B780034F6E5 /* YoutubePreview.swift */,
 				69CDAA3D268E18E000CD95A3 /* GameModel.swift */,
 				69CDAA3F268E18EB00CD95A3 /* Gif.swift */,
-				69CDAA41268E18FE00CD95A3 /* Video.swift */,
+				69CDAA41268E18FE00CD95A3 /* AVPLayer.swift */,
 				69CDAA43268E190C00CD95A3 /* Sound.swift */,
 			);
 			path = ContentModels;
@@ -239,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 699E9C82267F77DF00AFFF8D /* Build configuration list for PBXNativeTarget "Aphelion1" */;
 			buildPhases = (
+				F1EE993B157E55F63E78BC2B /* [CP] Check Pods Manifest.lock */,
 				699E9C6F267F77DE00AFFF8D /* Sources */,
 				699E9C70267F77DE00AFFF8D /* Frameworks */,
 				699E9C71267F77DE00AFFF8D /* Resources */,
+				5FBDCD1E6A494A06419FEE0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,6 +342,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5FBDCD1E6A494A06419FEE0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aphelion1/Pods-Aphelion1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aphelion1/Pods-Aphelion1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aphelion1/Pods-Aphelion1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1EE993B157E55F63E78BC2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aphelion1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		699E9C6F267F77DE00AFFF8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,17 +391,21 @@
 			files = (
 				6921239426937E710034F6E5 /* EmptyTile.swift in Sources */,
 				699E9C79267F77DE00AFFF8D /* Rotation3dView.swift in Sources */,
+				692123CB26975B780034F6E5 /* YoutubePreview.swift in Sources */,
+				692123CD26975B780034F6E5 /* YoutubeModel.swift in Sources */,
 				69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */,
 				69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */,
 				699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */,
-				69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */,
+				69CDAA42268E18FE00CD95A3 /* AVPLayer.swift in Sources */,
 				69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */,
+				692123CE26975B780034F6E5 /* CacheManager.swift in Sources */,
 				69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */,
 				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
 				692123C026975B250034F6E5 /* YoutubeCard.swift in Sources */,
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
 				69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */,
 				69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */,
+				692123C926975B780034F6E5 /* VideoInfo.swift in Sources */,
 				6921238C268F050D0034F6E5 /* ThemeButton.swift in Sources */,
 				69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */,
 				69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */,
@@ -326,6 +413,7 @@
 				6921238F2691E2400034F6E5 /* TestView.swift in Sources */,
 				69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */,
 				6921239126937C940034F6E5 /* YoutubeView.swift in Sources */,
+				692123C826975B780034F6E5 /* Response.swift in Sources */,
 				69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */,
 				6921238A268EFCAE0034F6E5 /* SpeedStepper.swift in Sources */,
 			);
@@ -452,6 +540,7 @@
 		};
 		699E9C83267F77DF00AFFF8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14D6F80202EB2D30F53702D4 /* Pods-Aphelion1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,6 +563,7 @@
 		};
 		699E9C84267F77DF00AFFF8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33F914684F78F393951805F6 /* Pods-Aphelion1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -9,16 +9,34 @@ import SwiftUI
 
 struct YoutubeView: View {
     
+    @StateObject var model = VideoModel()
     @State var searchKeyword = ""
     
     var body: some View {
-        TextField("Search",
-                  text: $searchKeyword,
-                  onCommit: {
-                        
-                  }
-        )
+        
+        VStack {
+            //search bar
+            TextField("Search",
+                      text: $searchKeyword,
+                      onCommit: {
+                            
+                      }
+            )
+            //video list
+            ScrollView {
+                LazyVStack {
+                    ForEach(model.videos, id:\.videoId) { video in
+                        YoutubeCard(videoPreview: VideoPreview(video: video))
+                            .padding()
+                    }
+                }
+                .padding(.top, 10)
+            }
+        }
+        .foregroundColor(.white)
+        .animation(.easeOut)
     }
+    
 }
 
 struct YoutubeView_Previews: PreviewProvider {
