@@ -19,7 +19,7 @@
 		692123DA26976CEA0034F6E5 /* YTCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D926976CEA0034F6E5 /* YTCard.swift */; };
 		692123DC269770C60034F6E5 /* YTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123DB269770C60034F6E5 /* YTView.swift */; };
 		693F040126984FA9004F7C03 /* TestScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F040026984FA9004F7C03 /* TestScroll.swift */; };
-		693F04032698602F004F7C03 /* ScrollTest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04022698602F004F7C03 /* ScrollTest2.swift */; };
+		693F04032698602F004F7C03 /* TestScroll2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F04022698602F004F7C03 /* TestScroll2.swift */; };
 		699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */; };
 		699E9C79267F77DE00AFFF8D /* Rotation3dView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */; };
 		699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7A267F77DF00AFFF8D /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 		692123D926976CEA0034F6E5 /* YTCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTCard.swift; sourceTree = "<group>"; };
 		692123DB269770C60034F6E5 /* YTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTView.swift; sourceTree = "<group>"; };
 		693F040026984FA9004F7C03 /* TestScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScroll.swift; sourceTree = "<group>"; };
-		693F04022698602F004F7C03 /* ScrollTest2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTest2.swift; sourceTree = "<group>"; };
+		693F04022698602F004F7C03 /* TestScroll2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScroll2.swift; sourceTree = "<group>"; };
 		699E9C73267F77DE00AFFF8D /* Aphelion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphelion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aphelion1App.swift; sourceTree = "<group>"; };
 		699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation3dView.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				6921238E2691E2400034F6E5 /* TestView.swift */,
 				692123DB269770C60034F6E5 /* YTView.swift */,
 				693F040026984FA9004F7C03 /* TestScroll.swift */,
-				693F04022698602F004F7C03 /* ScrollTest2.swift */,
+				693F04022698602F004F7C03 /* TestScroll2.swift */,
 				692123BE26975AD60034F6E5 /* YoutubeElements */,
 				69CDAA2A268E180300CD95A3 /* GameView.swift */,
 				69CDAA30268E185900CD95A3 /* GameElements */,
@@ -406,7 +406,7 @@
 				692123D6269767130034F6E5 /* YTModel.swift in Sources */,
 				692123CE26975B780034F6E5 /* CacheManager.swift in Sources */,
 				69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */,
-				693F04032698602F004F7C03 /* ScrollTest2.swift in Sources */,
+				693F04032698602F004F7C03 /* TestScroll2.swift in Sources */,
 				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
 				692123DA26976CEA0034F6E5 /* YTCard.swift in Sources */,
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,

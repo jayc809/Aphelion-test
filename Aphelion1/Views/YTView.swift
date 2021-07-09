@@ -43,11 +43,11 @@ struct YTView: View {
                     LazyVStack(spacing: 20) {
                         ForEach(model.ytVideoInfos, id:\.videoId) { ytVideoInfo in
                             YTCard(ytVideoInfo: ytVideoInfo)
-                                .rotationEffect(Angle(degrees: -15))
+                                //.rotationEffect(Angle(degrees: -15))
                         }
                     }
                 }
-                .rotationEffect(Angle(degrees: 15))
+                //.rotationEffect(Angle(degrees: 15))
             }
             
         }
