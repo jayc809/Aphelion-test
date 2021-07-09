@@ -13,6 +13,9 @@ struct YTView: View {
     
     @StateObject var model = YTModel()
     @State var searchKeyword = ""
+    @State var imageData = Data()
+    let imageWidth = Constants.screenWidth * 0.3
+    @State var refresh = false
     
     var body: some View {
        
@@ -24,23 +27,34 @@ struct YTView: View {
                 text: $searchKeyword,
                 onCommit: {
                     searchWord = searchKeyword
+                    model.getYTVideoInfos()
                 }
             )
             
             //videos
             HStack {
-                ScrollView {
-                    LazyVStack {
+            
+                Image(uiImage: UIImage(data: imageData) ?? UIImage())
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: imageWidth, height: imageWidth * 9 / 16)
+                
+                ScrollView(showsIndicators: false) {
+                    LazyVStack(spacing: 20) {
                         ForEach(model.ytVideoInfos, id:\.videoId) { ytVideoInfo in
                             YTCard(ytVideoInfo: ytVideoInfo)
+                                .rotationEffect(Angle(degrees: -15))
                         }
                     }
                 }
+                .rotationEffect(Angle(degrees: 15))
             }
             
         }
+        .padding()
         
     }
+    
 }
 
 struct YTView_Previews: PreviewProvider {

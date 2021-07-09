@@ -54,8 +54,7 @@ class Constants {
     
     //youtube
     static let apiUrl = "https://www.googleapis.com/youtube/v3"
-    static let apiKey = "AIzaSyCmx_z2hKrIY9edJ3hqz3_w5B6btQxLDoU"
-    static let playlistId = "PL2OjxKTsL2A7zPuwzSYUm3NVQbc3iM0_8"
+    static let apiKey = "AIzaSyBld05sx_Mo76i7WdjhuAPdfv2nUVmrx50"
     
 }
 

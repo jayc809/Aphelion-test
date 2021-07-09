@@ -26,15 +26,22 @@ struct YTCard: View {
                     
                     Text(ytVideoInfo.videoName)
                         .font(Font.system(size: 15))
+                        .lineLimit(1)
                     
                     Text(ytVideoInfo.channelName)
                         .font(Font.system(size: 10))
+                        .lineLimit(1)
+                    
+//                    Text(ytVideoInfo.videoId)
+//                        .font(Font.system(size: 10))
+//                        .lineLimit(1)
                     
                 }
+                .frame(width: Constants.screenWidth * 0.35 - 40, alignment: .leading)
                 
             }
             .foregroundColor(.white)
-            .frame(width: Constants.screenWidth * 0.4, height: 70)
+            .frame(width: Constants.screenWidth * 0.35, height: 50)
         })
         
     }
