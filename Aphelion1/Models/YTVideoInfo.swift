@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct YTVideoInfo: Decodable {
     
@@ -13,6 +14,7 @@ struct YTVideoInfo: Decodable {
     var videoName = ""
     var thumbnailId = ""
     var channelName = ""
+    var position: CGRect = .zero
     
     enum CodingKeys: String, CodingKey {
         
