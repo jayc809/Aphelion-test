@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct PlayButton: View {
+    
+    var width: CGFloat
+    
     var body: some View {
+        
         Button {
             
         } label: {
             ZStack {
                 Rectangle()
-                    .frame(width: 180, height: 30)
+                    .frame(width: width, height: width * 0.15)
                     .foregroundColor(.white)
                     .cornerRadius(10)
                 
-                Text("Play")
+                Text("Start Game")
+                    .bold()
                     .foregroundColor(.black)
             }
         }
-        
-        Spacer()
     }
 }
 
 struct PlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        PlayButton()
+        PlayButton(width: 150)
     }
 }

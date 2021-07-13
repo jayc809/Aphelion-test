@@ -18,6 +18,7 @@ struct ThumbnailElement: View {
             .resizable()
             .scaledToFill()
             .frame(width: imageWidth, height: imageWidth * 9 / 16)
+            .clipped()
             .border(Color.white)
         
     }

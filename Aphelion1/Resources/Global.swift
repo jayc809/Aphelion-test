@@ -8,9 +8,16 @@
 import Foundation
 import SwiftUI
 
-//adjustable
+//gameplay
 var tileSpeed = 1.1
+var difficulty = "Hard"
+var slideTileOnOff = "On"
+var portionPlayed = "1:43"
+var divineMultiplier = 1.5
 var framesAdjusted = 9
+
+//visual
+var tileType = "Beat"
 var videoSaturation = 1.2
 var videoBrightness = -0.1
 

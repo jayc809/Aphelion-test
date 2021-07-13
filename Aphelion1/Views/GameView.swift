@@ -10,7 +10,6 @@ import SwiftUI
 var timerTile = Timer.publish(every: tileSpeed / 100, on: .main, in: .common).autoconnect()
 var timerTest = Timer.publish(every: 0.7, on: .current, in: .common).autoconnect()
 var timerHold = Timer.publish(every: 0.15, on: .current, in: .common).autoconnect()
-var tileType = "Beat"
 
 struct GameView: View {
     

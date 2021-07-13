@@ -16,7 +16,15 @@ struct YTView: View {
     @State var imageData = Data()
     @State var detectPosition: CGFloat!
     @State var selectedVideoInfo: YTVideoInfo!
-    let selectedMultiplier: CGFloat = 1.5
+    let rowWidth: CGFloat = Constants.screenWidth * 0.37
+    var rowContentWidth: CGFloat {
+        return rowWidth - (rowWidth * 360 / 1800 * 0.536) - 14
+    }
+    let selectedMultiplier: CGFloat = 1.25
+    var selectedOffset: CGFloat {
+        return 0 - (selectedMultiplier - 1) / 2 * rowWidth + 2.5
+    }
+    @State var confirmed = false
     
     var body: some View {
        
@@ -28,7 +36,7 @@ struct YTView: View {
                 Spacer()
                 Spacer()
                 
-                ThumbnailElement(imageData: imageData, imageWidth: Constants.screenWidth * 0.3)
+                ThumbnailElement(imageData: imageData, imageWidth: Constants.screenWidth * 0.28)
                     
                 Spacer()
                 
@@ -38,7 +46,22 @@ struct YTView: View {
                 
                 Spacer()
                 
-                PlayButton()
+                Button {
+                    confirmed = true
+                } label: {
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 180, height: 180 * 0.15)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                        
+                        Text("Confirm")
+                            .bold()
+                            .foregroundColor(.black)
+                    }
+                }
+                
+                Spacer()
 
             }
             .frame(width: Constants.halfScreenWidth, height: Constants.screenHeight)
@@ -52,36 +75,37 @@ struct YTView: View {
                         VStack {
                             ZStack {
                                 //background
-                                Image("PauseMenu")
+                                Image(selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId ? "YTRowSelected" : "YTRow")
                                     .resizable()
+                                    .scaledToFit()
                                 //text
                                 VStack(alignment: .leading, spacing: 5) {
                                     Text(ytVideoInfo.videoName)
-                                        .font(Font.system(size: 15))
+                                        .font(Font.system(size: 14))
                                         .lineLimit(1)
                                     Text("- \(ytVideoInfo.channelName)")
                                         .font(Font.system(size: 10))
                                         .lineLimit(1)
+                                        .offset(x: -10)
                                 }
-                                .frame(width: Constants.screenWidth * 0.3 - 35, alignment: .leading)
-                                .foregroundColor(.white)
+                                .frame(width: rowContentWidth, alignment: .leading)
+                                .offset(x: 10)
+                                .foregroundColor(selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId ? .black : .white)
                             }
-                            .frame(width: Constants.screenWidth * 0.3, height: 45)
+                            .frame(width: rowWidth)
                         }
-                        .scaleEffect(selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId  ? selectedMultiplier : 1)
-                        .frame(
-                            width: selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId  ? Constants.screenWidth * 0.3 * selectedMultiplier : Constants.screenWidth * 0.3,
-                            height: selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId  ? 45 * selectedMultiplier : 45
-                        )
+                        .scaleEffect(selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId ? selectedMultiplier : 1)
+                        .frame(width: selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId ? rowWidth * (selectedMultiplier * 2 - 1) : rowWidth)
                         .padding(10)
+                        .offset(x: selectedVideoInfo != nil && selectedVideoInfo.videoId == ytVideoInfo.videoId ? selectedOffset : 0)
                         .getPosition { position in
                             
                             model.ytVideoInfos[index].position = position
                             
                             if ytVideoInfo.position.maxY >= detectPosition && ytVideoInfo.position.minY <= detectPosition {
+                                imageData = YTVideoProcess(ytVideoInfo: ytVideoInfo).thumbnailData
                                 withAnimation(.easeOut (duration: 0.1)) {
                                     selectedVideoInfo = ytVideoInfo
-                                    imageData = YTVideoProcess(ytVideoInfo: ytVideoInfo).thumbnailData
                                 }
                             }
                         
@@ -95,14 +119,14 @@ struct YTView: View {
                         .rotationEffect(Angle(degrees: -15))
                     }
                 }
-                .padding(.vertical, detectPosition)
+                .padding(.vertical, Constants.screenHeight * 0.6)
             }
             .frame(width: Constants.screenWidth, height: Constants.screenHeight * 1.4)
             .getPosition { position in
                 detectPosition = (position.minY + position.maxY) * 0.5
             }
             .rotationEffect(Angle(degrees: 15))
-            .position(x: Constants.screenWidth * 0.75, y: Constants.screenHeight * 0.55)
+            .position(x: Constants.screenWidth * 0.73, y: Constants.screenHeight * 0.53)
             
             //search bar
             TextField(
@@ -114,10 +138,14 @@ struct YTView: View {
                 }
             )
             .frame(width: Constants.screenWidth * 0.4, height: 30)
-            .position(x: Constants.screenWidth * 0.2, y: 20)
+            //.border(Color.green)
+            .position(x: Constants.screenWidth * 0.5, y: Constants.screenHeight * 0.5)
+            
+            if confirmed {
+                YTConfirmationView(videoName: selectedVideoInfo.videoName, channelName: selectedVideoInfo.channelName, imageData: imageData)
+            }
             
         }
-        .padding()
         
     }
     
