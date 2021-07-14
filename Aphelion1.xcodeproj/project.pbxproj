@@ -20,6 +20,9 @@
 		698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813AE269AE96000E955A8 /* ThumbnailElement.swift */; };
 		698813B1269AED7700E955A8 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813B0269AED7700E955A8 /* PlayButton.swift */; };
 		698813B6269C498000E955A8 /* YTConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813B5269C498000E955A8 /* YTConfirmationView.swift */; };
+		698813BC269DD56800E955A8 /* TestYTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BB269DD56800E955A8 /* TestYTView.swift */; };
+		698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BD269E104600E955A8 /* SearchBarElement.swift */; };
+		698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BF269E1D1200E955A8 /* HighScoreElement.swift */; };
 		699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */; };
 		699E9C79267F77DE00AFFF8D /* Rotation3dView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */; };
 		699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E9C7A267F77DF00AFFF8D /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		698813AE269AE96000E955A8 /* ThumbnailElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailElement.swift; sourceTree = "<group>"; };
 		698813B0269AED7700E955A8 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		698813B5269C498000E955A8 /* YTConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTConfirmationView.swift; sourceTree = "<group>"; };
+		698813BB269DD56800E955A8 /* TestYTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestYTView.swift; sourceTree = "<group>"; };
+		698813BD269E104600E955A8 /* SearchBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarElement.swift; sourceTree = "<group>"; };
+		698813BF269E1D1200E955A8 /* HighScoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreElement.swift; sourceTree = "<group>"; };
 		699E9C73267F77DE00AFFF8D /* Aphelion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphelion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aphelion1App.swift; sourceTree = "<group>"; };
 		699E9C78267F77DE00AFFF8D /* Rotation3dView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation3dView.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 				698813AE269AE96000E955A8 /* ThumbnailElement.swift */,
 				698813B0269AED7700E955A8 /* PlayButton.swift */,
 				698813B5269C498000E955A8 /* YTConfirmationView.swift */,
+				698813BD269E104600E955A8 /* SearchBarElement.swift */,
+				698813BF269E1D1200E955A8 /* HighScoreElement.swift */,
 			);
 			path = YoutubeElements;
 			sourceTree = "<group>";
@@ -195,6 +203,7 @@
 			children = (
 				6921238E2691E2400034F6E5 /* TestView.swift */,
 				692123DB269770C60034F6E5 /* YTView.swift */,
+				698813BB269DD56800E955A8 /* TestYTView.swift */,
 				692123BE26975AD60034F6E5 /* YoutubeElements */,
 				69CDAA2A268E180300CD95A3 /* GameView.swift */,
 				69CDAA30268E185900CD95A3 /* GameElements */,
@@ -406,6 +415,7 @@
 				69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */,
 				692123D6269767130034F6E5 /* YTModel.swift in Sources */,
 				692123CE26975B780034F6E5 /* CacheManager.swift in Sources */,
+				698813BC269DD56800E955A8 /* TestYTView.swift in Sources */,
 				69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */,
 				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
@@ -414,8 +424,10 @@
 				69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */,
 				698813B1269AED7700E955A8 /* PlayButton.swift in Sources */,
 				698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */,
+				698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */,
 				692123D826976AA60034F6E5 /* YTVideoProcess.swift in Sources */,
 				6921238C268F050D0034F6E5 /* ThemeButton.swift in Sources */,
+				698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */,
 				69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */,
 				69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */,
 				692123D4269760270034F6E5 /* YTVideoInfo.swift in Sources */,

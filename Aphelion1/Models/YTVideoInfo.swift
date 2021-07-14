@@ -31,11 +31,18 @@ struct YTVideoInfo: Decodable {
     }
     
     //for testing
-    init() {
+    init(test: String) {
         self.videoId = "IKKar5SS29E"
         self.videoName = "GHOST / 星街すいせい(official)"
         self.thumbnailId = "https://i.ytimg.com/vi/IKKar5SS29E/hqdefault.jpg"
         self.channelName = "Suisei Channel"
+    }
+    
+    init() {
+        self.videoId = ""
+        self.videoName = ""
+        self.thumbnailId = ""
+        self.channelName = ""
     }
     
     init(from decoder: Decoder) throws {
