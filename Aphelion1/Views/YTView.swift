@@ -11,11 +11,10 @@ var searchWord = "suisei song"
 
 struct YTView: View {
     
+    @StateObject var videoContent = YTContentModel()
     @State var imageData = Data()
     @State var selectedVideoInfo = YTVideoInfo()
     @State var searchedCount = 0
-    
-    @StateObject var videoContent = YTContentModel()
     
     let thumbnailWidth = Constants.screenWidth * 0.47
     let gradientLineHeight: CGFloat = 10
@@ -59,11 +58,25 @@ struct YTView: View {
                 .padding(.vertical,gradientLineHeight)
                 
                 //confirm button
-                ConfirmButton(fontSize: 18, width: Constants.screenWidth * 0.24)
+                Button(action: {
+                    
+                    
+                    
+                }, label: {
+                    ZStack {
+                        Image("PauseMenu")
+                            .resizable()
+                            .colorInvert()
+                        Text("Confirm Selection")
+                            .font(Font.system(size: 18))
+                            .foregroundColor(.black)
+                            .bold()
+                    }
+                })
+                .frame(width: Constants.screenWidth * 0.24, height: Constants.screenWidth * 0.24 * 0.15)
                 
             }
             .frame(width: Constants.screenWidth * 0.5, height: Constants.screenHeight)
-            //.border(Color.green)
             .position(x: Constants.screenWidth * 0.29, y: Constants.screenHeight * 0.5)
             
             //gradient line
@@ -88,20 +101,6 @@ struct YTView: View {
                         imageData = Data()
                     }
             }
-            
-            Button(action: {
-                
-                videoContent.getYTVideoDuration(videoId: selectedVideoInfo.videoId)
-                
-            }, label: {
-                ZStack {
-                    Rectangle()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.green)
-                    Text(videoContent.videoDurationRaw)
-                        .foregroundColor(.white)
-                }
-            })
     
         }
     }

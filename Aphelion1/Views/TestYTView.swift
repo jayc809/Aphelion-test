@@ -55,7 +55,23 @@ struct TestYTView: View {
                 .padding(.vertical,gradientLineHeight)
                 
                 //confirm button
-                ConfirmButton(fontSize: 18, width: Constants.screenWidth * 0.24)
+                Button(action: {
+                    
+                }, label: {
+                    ZStack {
+                        
+                        Image("PauseMenu")
+                            .resizable()
+                            .colorInvert()
+                        
+                        Text("Confirm Selection")
+                            .font(Font.system(size: 18))
+                            .foregroundColor(.black)
+                            .bold()
+                        
+                    }
+                })
+                .frame(width: Constants.screenWidth * 0.24, height: Constants.screenWidth * 0.24 * 0.15)
                 
             }
             .frame(width: Constants.screenWidth * 0.5, height: Constants.screenHeight)

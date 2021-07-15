@@ -13,7 +13,6 @@ class YTContentModel: ObservableObject {
     @Published var videoDurationRaw = ""
     
     init() {
-        
     }
     
     func getYTVideoDuration(videoId: String) {
@@ -49,7 +48,9 @@ class YTContentModel: ObservableObject {
             }
             
             if let duration = response.value?.items?[0].duration {
-                self.videoDurationRaw = duration
+                DispatchQueue.main.async {
+                    self.videoDurationRaw = duration
+                }
             }
             
         }
