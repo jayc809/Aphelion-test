@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6921238A268EFCAE0034F6E5 /* SpeedStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69212389268EFCAE0034F6E5 /* SpeedStepper.swift */; };
+		6921238A268EFCAE0034F6E5 /* TileSpeedStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69212389268EFCAE0034F6E5 /* TileSpeedStepper.swift */; };
 		6921238C268F050D0034F6E5 /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921238B268F050D0034F6E5 /* ThemeButton.swift */; };
 		6921238F2691E2400034F6E5 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921238E2691E2400034F6E5 /* TestView.swift */; };
 		6921239426937E710034F6E5 /* EmptyTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921239326937E700034F6E5 /* EmptyTile.swift */; };
 		692123CE26975B780034F6E5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123C726975B780034F6E5 /* CacheManager.swift */; };
-		692123D226975F920034F6E5 /* YTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D126975F920034F6E5 /* YTResponse.swift */; };
-		692123D4269760270034F6E5 /* YTVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D3269760270034F6E5 /* YTVideoInfo.swift */; };
+		692123D226975F920034F6E5 /* YTVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D126975F920034F6E5 /* YTVideoInfo.swift */; };
 		692123D6269767130034F6E5 /* YTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D5269767130034F6E5 /* YTModel.swift */; };
 		692123D826976AA60034F6E5 /* YTVideoProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123D726976AA60034F6E5 /* YTVideoProcess.swift */; };
-		692123DC269770C60034F6E5 /* YTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123DB269770C60034F6E5 /* YTView.swift */; };
+		692123DC269770C60034F6E5 /* YTView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692123DB269770C60034F6E5 /* YTView1.swift */; };
+		6927A3DD269F3CE500009F90 /* DifficultyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3DC269F3CE500009F90 /* DifficultyButton.swift */; };
+		6927A3DF269F414900009F90 /* AnimationQualityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3DE269F414900009F90 /* AnimationQualityButton.swift */; };
+		6927A3E1269F42B000009F90 /* GameBackgroundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3E0269F42B000009F90 /* GameBackgroundButton.swift */; };
+		6927A3E3269F438600009F90 /* YTSettingsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3E2269F438600009F90 /* YTSettingsElement.swift */; };
+		6927A3E5269F80F000009F90 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3E4269F80F000009F90 /* ConfirmButton.swift */; };
+		6927A3E726A041F800009F90 /* ScrollListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3E626A041F800009F90 /* ScrollListElement.swift */; };
+		6927A3E926A0496100009F90 /* YTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3E826A0496100009F90 /* YTView.swift */; };
+		6927A3EB26A04DAE00009F90 /* TestYTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3EA26A04DAE00009F90 /* TestYTView.swift */; };
+		6927A3ED26A079E600009F90 /* YTVideoDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3EC26A079E600009F90 /* YTVideoDuration.swift */; };
+		6927A3F126A0958900009F90 /* YTContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3F026A0958900009F90 /* YTContentModel.swift */; };
 		698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813AE269AE96000E955A8 /* ThumbnailElement.swift */; };
 		698813B1269AED7700E955A8 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813B0269AED7700E955A8 /* PlayButton.swift */; };
 		698813B6269C498000E955A8 /* YTConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813B5269C498000E955A8 /* YTConfirmationView.swift */; };
-		698813BC269DD56800E955A8 /* TestYTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BB269DD56800E955A8 /* TestYTView.swift */; };
 		698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BD269E104600E955A8 /* SearchBarElement.swift */; };
 		698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BF269E1D1200E955A8 /* HighScoreElement.swift */; };
 		699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E9C76267F77DE00AFFF8D /* Aphelion1App.swift */; };
@@ -53,20 +61,28 @@
 		14D6F80202EB2D30F53702D4 /* Pods-Aphelion1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aphelion1.debug.xcconfig"; path = "Target Support Files/Pods-Aphelion1/Pods-Aphelion1.debug.xcconfig"; sourceTree = "<group>"; };
 		26A7395E04445E7EF20759C1 /* Pods_Aphelion1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aphelion1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F914684F78F393951805F6 /* Pods-Aphelion1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aphelion1.release.xcconfig"; path = "Target Support Files/Pods-Aphelion1/Pods-Aphelion1.release.xcconfig"; sourceTree = "<group>"; };
-		69212389268EFCAE0034F6E5 /* SpeedStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedStepper.swift; sourceTree = "<group>"; };
+		69212389268EFCAE0034F6E5 /* TileSpeedStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSpeedStepper.swift; sourceTree = "<group>"; };
 		6921238B268F050D0034F6E5 /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 		6921238E2691E2400034F6E5 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6921239326937E700034F6E5 /* EmptyTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTile.swift; sourceTree = "<group>"; };
 		692123C726975B780034F6E5 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
-		692123D126975F920034F6E5 /* YTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTResponse.swift; sourceTree = "<group>"; };
-		692123D3269760270034F6E5 /* YTVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideoInfo.swift; sourceTree = "<group>"; };
+		692123D126975F920034F6E5 /* YTVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideoInfo.swift; sourceTree = "<group>"; };
 		692123D5269767130034F6E5 /* YTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTModel.swift; sourceTree = "<group>"; };
 		692123D726976AA60034F6E5 /* YTVideoProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideoProcess.swift; sourceTree = "<group>"; };
-		692123DB269770C60034F6E5 /* YTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTView.swift; sourceTree = "<group>"; };
+		692123DB269770C60034F6E5 /* YTView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTView1.swift; sourceTree = "<group>"; };
+		6927A3DC269F3CE500009F90 /* DifficultyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyButton.swift; sourceTree = "<group>"; };
+		6927A3DE269F414900009F90 /* AnimationQualityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationQualityButton.swift; sourceTree = "<group>"; };
+		6927A3E0269F42B000009F90 /* GameBackgroundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBackgroundButton.swift; sourceTree = "<group>"; };
+		6927A3E2269F438600009F90 /* YTSettingsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSettingsElement.swift; sourceTree = "<group>"; };
+		6927A3E4269F80F000009F90 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		6927A3E626A041F800009F90 /* ScrollListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollListElement.swift; sourceTree = "<group>"; };
+		6927A3E826A0496100009F90 /* YTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTView.swift; sourceTree = "<group>"; };
+		6927A3EA26A04DAE00009F90 /* TestYTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestYTView.swift; sourceTree = "<group>"; };
+		6927A3EC26A079E600009F90 /* YTVideoDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideoDuration.swift; sourceTree = "<group>"; };
+		6927A3F026A0958900009F90 /* YTContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTContentModel.swift; sourceTree = "<group>"; };
 		698813AE269AE96000E955A8 /* ThumbnailElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailElement.swift; sourceTree = "<group>"; };
 		698813B0269AED7700E955A8 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		698813B5269C498000E955A8 /* YTConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTConfirmationView.swift; sourceTree = "<group>"; };
-		698813BB269DD56800E955A8 /* TestYTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestYTView.swift; sourceTree = "<group>"; };
 		698813BD269E104600E955A8 /* SearchBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarElement.swift; sourceTree = "<group>"; };
 		698813BF269E1D1200E955A8 /* HighScoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreElement.swift; sourceTree = "<group>"; };
 		699E9C73267F77DE00AFFF8D /* Aphelion1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aphelion1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				6921238B268F050D0034F6E5 /* ThemeButton.swift */,
-				69212389268EFCAE0034F6E5 /* SpeedStepper.swift */,
 			);
 			path = PauseMenuElements;
 			sourceTree = "<group>";
@@ -151,11 +166,24 @@
 			children = (
 				698813AE269AE96000E955A8 /* ThumbnailElement.swift */,
 				698813B0269AED7700E955A8 /* PlayButton.swift */,
-				698813B5269C498000E955A8 /* YTConfirmationView.swift */,
 				698813BD269E104600E955A8 /* SearchBarElement.swift */,
 				698813BF269E1D1200E955A8 /* HighScoreElement.swift */,
+				6927A3E4269F80F000009F90 /* ConfirmButton.swift */,
+				6927A3E2269F438600009F90 /* YTSettingsElement.swift */,
+				6927A3DB269F3CBB00009F90 /* Settings */,
 			);
 			path = YoutubeElements;
+			sourceTree = "<group>";
+		};
+		6927A3DB269F3CBB00009F90 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6927A3DC269F3CE500009F90 /* DifficultyButton.swift */,
+				69212389268EFCAE0034F6E5 /* TileSpeedStepper.swift */,
+				6927A3DE269F414900009F90 /* AnimationQualityButton.swift */,
+				6927A3E0269F42B000009F90 /* GameBackgroundButton.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		699E9C6A267F77DE00AFFF8D = {
@@ -202,8 +230,11 @@
 			isa = PBXGroup;
 			children = (
 				6921238E2691E2400034F6E5 /* TestView.swift */,
-				692123DB269770C60034F6E5 /* YTView.swift */,
-				698813BB269DD56800E955A8 /* TestYTView.swift */,
+				692123DB269770C60034F6E5 /* YTView1.swift */,
+				6927A3E626A041F800009F90 /* ScrollListElement.swift */,
+				6927A3E826A0496100009F90 /* YTView.swift */,
+				6927A3EA26A04DAE00009F90 /* TestYTView.swift */,
+				698813B5269C498000E955A8 /* YTConfirmationView.swift */,
 				692123BE26975AD60034F6E5 /* YoutubeElements */,
 				69CDAA2A268E180300CD95A3 /* GameView.swift */,
 				69CDAA30268E185900CD95A3 /* GameElements */,
@@ -215,8 +246,8 @@
 		69CDAA28268E17E100CD95A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				692123D126975F920034F6E5 /* YTResponse.swift */,
-				692123D3269760270034F6E5 /* YTVideoInfo.swift */,
+				692123D126975F920034F6E5 /* YTVideoInfo.swift */,
+				6927A3EC26A079E600009F90 /* YTVideoDuration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				692123D5269767130034F6E5 /* YTModel.swift */,
+				6927A3F026A0958900009F90 /* YTContentModel.swift */,
 				692123D726976AA60034F6E5 /* YTVideoProcess.swift */,
 				69CDAA3D268E18E000CD95A3 /* GameModel.swift */,
 				69CDAA3F268E18EB00CD95A3 /* Gif.swift */,
@@ -406,23 +438,31 @@
 			files = (
 				698813B6269C498000E955A8 /* YTConfirmationView.swift in Sources */,
 				6921239426937E710034F6E5 /* EmptyTile.swift in Sources */,
+				6927A3EB26A04DAE00009F90 /* TestYTView.swift in Sources */,
+				6927A3E5269F80F000009F90 /* ConfirmButton.swift in Sources */,
 				699E9C79267F77DE00AFFF8D /* Rotation3dView.swift in Sources */,
 				69CDAA2B268E180300CD95A3 /* GameView.swift in Sources */,
 				69CDAA32268E187400CD95A3 /* SlideTile.swift in Sources */,
 				699E9C77267F77DE00AFFF8D /* Aphelion1App.swift in Sources */,
-				692123D226975F920034F6E5 /* YTResponse.swift in Sources */,
+				6927A3F126A0958900009F90 /* YTContentModel.swift in Sources */,
+				692123D226975F920034F6E5 /* YTVideoInfo.swift in Sources */,
 				69CDAA42268E18FE00CD95A3 /* Video.swift in Sources */,
+				6927A3E926A0496100009F90 /* YTView.swift in Sources */,
+				6927A3DF269F414900009F90 /* AnimationQualityButton.swift in Sources */,
+				6927A3DD269F3CE500009F90 /* DifficultyButton.swift in Sources */,
+				6927A3E3269F438600009F90 /* YTSettingsElement.swift in Sources */,
 				69CDAA3E268E18E000CD95A3 /* GameModel.swift in Sources */,
 				692123D6269767130034F6E5 /* YTModel.swift in Sources */,
 				692123CE26975B780034F6E5 /* CacheManager.swift in Sources */,
-				698813BC269DD56800E955A8 /* TestYTView.swift in Sources */,
 				69CDAA34268E188200CD95A3 /* HoldTile.swift in Sources */,
 				69CDAA47268E192700CD95A3 /* Global.swift in Sources */,
 				69CDAA38268E18AB00CD95A3 /* ScoreElement.swift in Sources */,
 				69CDAA3C268E18CF00CD95A3 /* TestTile.swift in Sources */,
-				692123DC269770C60034F6E5 /* YTView.swift in Sources */,
+				692123DC269770C60034F6E5 /* YTView1.swift in Sources */,
+				6927A3E726A041F800009F90 /* ScrollListElement.swift in Sources */,
 				69CDAA44268E190C00CD95A3 /* Sound.swift in Sources */,
 				698813B1269AED7700E955A8 /* PlayButton.swift in Sources */,
+				6927A3E1269F42B000009F90 /* GameBackgroundButton.swift in Sources */,
 				698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */,
 				698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */,
 				692123D826976AA60034F6E5 /* YTVideoProcess.swift in Sources */,
@@ -430,12 +470,12 @@
 				698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */,
 				69CDAA5A268E19C300CD95A3 /* Notes.swift in Sources */,
 				69CDAA40268E18EC00CD95A3 /* Gif.swift in Sources */,
-				692123D4269760270034F6E5 /* YTVideoInfo.swift in Sources */,
+				6927A3ED26A079E600009F90 /* YTVideoDuration.swift in Sources */,
 				69CDAA3A268E18BA00CD95A3 /* PauseMenu.swift in Sources */,
 				6921238F2691E2400034F6E5 /* TestView.swift in Sources */,
 				69CDAA2F268E184500CD95A3 /* TapTile.swift in Sources */,
 				69CDAA36268E189C00CD95A3 /* ComboElement.swift in Sources */,
-				6921238A268EFCAE0034F6E5 /* SpeedStepper.swift in Sources */,
+				6921238A268EFCAE0034F6E5 /* TileSpeedStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

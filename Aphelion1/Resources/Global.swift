@@ -8,15 +8,16 @@
 import Foundation
 import SwiftUI
 
-//gameplay
+//YTView
+var difficulty = 3 // 1 - easy, 2 - medium, 3 - hard, 4 - specialist
 var tileSpeed = 1.1
-var difficulty = "Hard"
-var slideTileOnOff = "On"
-var portionPlayed = "1:43"
-var divineMultiplier = 1.5
-var framesAdjusted = 9
+var tileSpeedOriginal = 1.1
+var animationQuality = 3 // 1 - stable, 2 - smooth, 3 - best
+var useBackground = 1 // 1 - video, 2 - user image, 3 - thumbnail
+var detectPosition = Constants.screenHeight * 0.55
 
-//visual
+//Gameplay settings
+var framesAdjusted = 9
 var tileType = "Beat"
 var videoSaturation = 1.2
 var videoBrightness = -0.1

@@ -13,9 +13,6 @@ struct HighScoreElement: View {
     var tier: String
     var fontSize: CGFloat
     var width: CGFloat
-    var height: CGFloat {
-        return width * 0.226
-    }
     var fullCombo: String
     
     var body: some View {
@@ -32,23 +29,24 @@ struct HighScoreElement: View {
                     
                     VStack {
                         HStack {
-                            Text("High Score")
-                                .font(Font.system(size: fontSize * 0.8))
-                                .italic()
                             Spacer()
+                            Text("High Score")
+                                .font(Font.system(size: fontSize * 0.9))
+                                .italic()
                         }
                         
                         HStack {
                             Spacer()
                             Text(String(format: "%010d", highScore))
                                 .font(Font.custom("Gill Sans Light Italic", size: fontSize * 1.2))
+                                .offset(x: -fontSize * 0.3)
                         }
                     }
-                    .frame(width: width * 0.6)
+                    .frame(width: width * 0.8)
                     .offset(x: width / 40)
                     
                 }
-                .frame(width: width, height: height)
+                .frame(width: width)
                 
                 if fullCombo == "Divine" {
                     Text("- Full Divine -")
@@ -68,8 +66,8 @@ struct HighScoreElement: View {
             Image("\(tier)Tier")
                 .resizable()
                 .scaledToFit()
-                .frame(width: width * 0.4 , height: width * 0.4)
-                .offset(x: width * 0.21, y: -width * 0.27)
+                .frame(width: width * 0.5)
+                .offset(x: -width * 0.18, y: -width * 0.26)
             
         }
     }
@@ -77,7 +75,7 @@ struct HighScoreElement: View {
 
 struct HighScoreElement_Previews: PreviewProvider {
     static var previews: some View {
-        HighScoreElement(highScore: 328984, tier: "S", fontSize: 30, width: 400, fullCombo: "")
+        HighScoreElement(highScore: 328984, tier: "A", fontSize: 30, width: 400, fullCombo: "")
             
     }
 }

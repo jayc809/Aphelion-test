@@ -17,6 +17,7 @@ struct ThumbnailElement: View {
         Image(uiImage: UIImage(data: imageData) ?? UIImage())
             .resizable()
             .scaledToFill()
+            .background(Color.black)
             .frame(width: imageWidth, height: imageWidth * 9 / 16)
             .clipped()
             .border(Color.white)

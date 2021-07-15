@@ -35,7 +35,7 @@ struct PauseMenu: View {
                         //tile theme button
                         ThemeButton(height: 25)
                         //tile speed stepper
-                        SpeedStepper(width: 94, height: 20, spacing: 12)
+                        TileSpeedStepper(width: 94, height: 20, spacing: 12)
                         
                     }
                 }

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct SpeedStepper: View {
+struct TileSpeedStepper: View {
     
-    @State var tileSpeed10 = 5
+    @State var tileSpeed10 = 5 - Int((tileSpeed - tileSpeedOriginal) / 0.1)
     var width: CGFloat
     var height: CGFloat
     var spacing: CGFloat
@@ -61,8 +61,8 @@ struct SpeedStepper: View {
     }
 }
 
-struct SpeedStepper_Previews: PreviewProvider {
+struct TileSpeedStepper_Previews: PreviewProvider {
     static var previews: some View {
-        SpeedStepper(width: 94, height: 20, spacing: 12)
+        TileSpeedStepper(width: 94, height: 20, spacing: 12)
     }
 }

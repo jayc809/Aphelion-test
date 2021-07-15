@@ -55,9 +55,6 @@ class YTModel: ObservableObject {
                     self.ytVideoInfos = items
                 }
             }
-            
         }
-        
     }
-    
 }
