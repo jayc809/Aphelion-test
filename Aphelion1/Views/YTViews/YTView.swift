@@ -17,6 +17,7 @@ struct YTView: View {
     @State var searchedCount = 0
     @State var showScrollList = 0
     @State var scrollListX = Constants.screenWidth * 0.73
+    @State var videoDetailsX = Constants.screenWidth * 1.41
     @State var scrollListGradientLineX = Constants.screenWidth * 0.96
     
     let infoVStackX = Constants.screenWidth * 0.29
@@ -105,13 +106,21 @@ struct YTView: View {
                         
                         if showScrollList % 2 == 0 {
                             //video list is showing
+                            videoContent.getYTVideoContent(videoId: selectedVideoInfo.videoId)
+                            videoContent.getYTVideoDuration(videoId: selectedVideoInfo.videoId)
                             withAnimation(.easeIn(duration: 0.2)) {
                                 scrollListX += Constants.screenWidth * 0.66
                                 scrollListGradientLineX += Constants.screenWidth * 0.66
                             }
+                            withAnimation(.easeOut(duration: 0.2)) {
+                                videoDetailsX -= Constants.screenWidth * 0.66
+                            }
                         }
                         else {
                             //detail list is showing
+                            withAnimation(.easeIn(duration: 0.2)) {
+                                videoDetailsX += Constants.screenWidth * 0.66
+                            }
                             withAnimation(.easeOut(duration: 0.2)) {
                                 scrollListX -= Constants.screenWidth * 0.66
                                 scrollListGradientLineX -= Constants.screenWidth * 0.66
@@ -159,6 +168,9 @@ struct YTView: View {
                         imageData = Data()
                     }
             }
+            
+            VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration: videoContent.ytVideoDuration.duration, published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16)
+                .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
     
         }
     }

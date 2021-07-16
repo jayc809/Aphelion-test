@@ -10,7 +10,8 @@ import Alamofire
 
 class YTContentModel: ObservableObject {
     
-    @Published var videoDurationRaw = ""
+    @Published var ytVideoContent = YTVideoContent()
+    @Published var ytVideoDuration = YTVideoDuration()
     
     init() {
     }
@@ -36,7 +37,7 @@ class YTContentModel: ObservableObject {
             ]
         )
         //.validate()
-        .responseDecodable(of: YTContent.self, decoder: decoder) { response in
+        .responseDecodable(of: YTRepsonseDuration.self, decoder: decoder) { response in
             
             //check validity
             switch response.result {
@@ -47,9 +48,51 @@ class YTContentModel: ObservableObject {
                 return
             }
             
-            if let duration = response.value?.items?[0].duration {
+            if let _ytVideoDuration = response.value?.items?[0] {
                 DispatchQueue.main.async {
-                    self.videoDurationRaw = duration
+                    self.ytVideoDuration = _ytVideoDuration
+                }
+            }
+            
+        }
+        
+    }
+    
+    func getYTVideoContent(videoId: String) {
+        
+        //make url
+        guard let url = URL(string: "\(Constants.apiUrl)/videos")
+        else {
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        //make request
+        AF.request(
+            url,
+            parameters: [
+                "part": "snippet",
+                "id": videoId,
+                "key": Constants.apiKey
+            ]
+        )
+        //.validate()
+        .responseDecodable(of: YTRepsonseContent.self, decoder: decoder) { response in
+            
+            //check validity
+            switch response.result {
+            case .success:
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let _ytVideoContent = response.value?.items?[0] {
+                DispatchQueue.main.async {
+                    self.ytVideoContent = _ytVideoContent
                 }
             }
             
