@@ -15,12 +15,16 @@ var tileSpeedOriginal = 1.1
 var animationQuality = 3 // 1 - stable, 2 - smooth, 3 - best
 var useBackground = 1 // 1 - video, 2 - user image, 3 - thumbnail
 var detectPosition = Constants.screenHeight * 0.55
+var slideNoteOff = false
+var divineBoostOff = false
 
 //Gameplay settings
 var framesAdjusted = 9
 var tileType = "Beat"
 var videoSaturation = 1.2
 var videoBrightness = -0.1
+var soundEffectsOff = false
+var audioOffset = 0
 
 //color change
 let stage1 = 50

@@ -8,7 +8,7 @@
 import SwiftUI
 
 var timerTile = Timer.publish(every: tileSpeed / 100, on: .main, in: .common).autoconnect()
-var timerTest = Timer.publish(every: 0.7, on: .current, in: .common).autoconnect()
+var timerTest = Timer.publish(every: 1.2, on: .current, in: .common).autoconnect()
 var timerHold = Timer.publish(every: 0.15, on: .current, in: .common).autoconnect()
 
 struct GameView: View {
@@ -71,7 +71,9 @@ struct GameView: View {
                     
                     if deploy1 {
                         //Tile(type: "Beat", endX: x1, combo: $combo, score: $score)
-                        TapTile(endX: x1, gameModel: gameModel, combo: $combo, score: $score, showDivine: $showDivine)
+                        //TapTile(endX: x1, gameModel: gameModel, combo: $combo, score: $score, showDivine: $showDivine)
+                        HoldTile(location: "Right", lineHeight: 2000, gameModel: gameModel, combo: $combo, score: $score, showDivine: $showDivine)
+                        HoldTile(location: "Left", lineHeight: 2000, gameModel: gameModel, combo: $combo, score: $score, showDivine: $showDivine)
                     }
                     if deploy2 {
                         //Tile(type: "Beat", endX: x2, combo: $combo, score: $score)
@@ -79,7 +81,7 @@ struct GameView: View {
                     }
                     if deploy3 {
                         //Tile(type: "Regular", endX: x3, combo: $combo, score: $score)
-                        TapTile(endX: x3, gameModel: gameModel, combo: $combo, score: $score, showDivine: $showDivine)
+                        SlideTile(endX: x3, gameModel: gameModel, side: "Left", combo: $combo, score: $score, showDivine: $showDivine)
                     }
                     if deploy4 {
                         //Tile(type: "Regular", endX: x4, combo: $combo, score: $score)

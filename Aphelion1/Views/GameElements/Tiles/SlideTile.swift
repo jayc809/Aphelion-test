@@ -45,7 +45,7 @@ struct SlideTile: View {
                     .scaledToFit()
                     .frame(width: Constants.tileSize)
             }
-            .rotation3DEffect(.degrees(side == "right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
+            .rotation3DEffect(.degrees(side == "Right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
             .rotation3DEffect(.degrees(10), axis: (x: 1, y: 0, z: 0))
             .scaleEffect(size)
             .opacity(Double(opacity))
@@ -63,7 +63,7 @@ struct SlideTile: View {
         //divine
         else if show == 2 {
             PlayGif(fileName: "SlideDiv", maxNum: 25, frameY: Constants.slideAnimationSize)
-                .rotation3DEffect(.degrees(side == "right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
+                .rotation3DEffect(.degrees(side == "Right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
                 .scaleEffect(sizeAdjusted)
                 .hueRotation(determineHue(combo: combo))
                 .position(x: positionAdjusted.x, y: Constants.tapLinePosition)
@@ -72,7 +72,7 @@ struct SlideTile: View {
         //good
         else if show == 3 {
             PlayGif(fileName: "SlideGood", maxNum: 25, frameY: Constants.slideAnimationSize)
-                .rotation3DEffect(.degrees(side == "right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
+                .rotation3DEffect(.degrees(side == "Right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
                 .scaleEffect(sizeAdjusted)
                 .hueRotation(determineHue(combo: combo))
                 .position(x: positionAdjusted.x, y: positionAdjusted.y)
@@ -81,7 +81,7 @@ struct SlideTile: View {
         //miss
         else if show == 4 {
             PlayGif(fileName: "SlideMiss", maxNum: 25, frameY: Constants.slideAnimationSize)
-                .rotation3DEffect(.degrees(side == "right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
+                .rotation3DEffect(.degrees(side == "Right" ? 0 : 180), axis: (x: 0, y: 1, z: 0))
                 .scaleEffect(sizeAdjusted)
                 .hueRotation(determineHue(combo: combo))
                 .position(x: positionAdjusted.x, y: positionAdjusted.y)
@@ -113,10 +113,10 @@ struct SlideTile: View {
         DragGesture(minimumDistance: 0)
             .onChanged({ slide in
             
-                if slide.translation.width < -10 && side == "left" {
+                if slide.translation.width < -10 && side == "Left" {
                     whenSlid()
                 }
-                else if slide.translation.width > 10 && side == "right" {
+                else if slide.translation.width > 10 && side == "Right" {
                     whenSlid()
                 }
             })

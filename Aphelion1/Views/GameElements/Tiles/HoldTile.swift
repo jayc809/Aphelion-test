@@ -34,7 +34,7 @@ struct HoldTile: View {
     @State var opacityLine = CGFloat(0.6)
     @State var clipOffset = CGFloat(0)
     var endX: CGFloat {
-        if location == "right" {
+        if location == "Right" {
             return Constants.tileXMax
         }
         else {

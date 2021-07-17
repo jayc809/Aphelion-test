@@ -15,7 +15,7 @@ struct YTView: View {
     @State var imageData = Data()
     @State var selectedVideoInfo = YTVideoInfo()
     @State var searchedCount = 0
-    @State var showScrollList = 0
+    @State var showScrollList = true
     @State var scrollListX = Constants.screenWidth * 0.73
     @State var videoDetailsX = Constants.screenWidth * 1.41
     @State var scrollListGradientLineX = Constants.screenWidth * 0.96
@@ -91,6 +91,18 @@ struct YTView: View {
                 HStack(spacing: 2) {
                     Button(action: {
                         
+                        if showScrollList == false {
+                            //detail list is showing
+                            withAnimation(.easeIn(duration: 0.2)) {
+                                videoDetailsX += Constants.screenWidth * 0.66
+                            }
+                            withAnimation(.easeOut(duration: 0.2)) {
+                                scrollListX -= Constants.screenWidth * 0.66
+                                scrollListGradientLineX -= Constants.screenWidth * 0.66
+                            }
+                            showScrollList = true
+                        }
+                        
                     }, label: {
                         ZStack{
                             Image("BackButtonBackground")
@@ -100,11 +112,12 @@ struct YTView: View {
                                 .font(Font.system(size: 16))
                                 .foregroundColor(.white)
                                 .bold()
+                                .offset(x: 2)
                         }
                     })
                     Button(action: {
                         
-                        if showScrollList % 2 == 0 {
+                        if showScrollList == true {
                             //video list is showing
                             videoContent.getYTVideoContent(videoId: selectedVideoInfo.videoId)
                             videoContent.getYTVideoDuration(videoId: selectedVideoInfo.videoId)
@@ -115,28 +128,19 @@ struct YTView: View {
                             withAnimation(.easeOut(duration: 0.2)) {
                                 videoDetailsX -= Constants.screenWidth * 0.66
                             }
+                            showScrollList = false
                         }
-                        else {
-                            //detail list is showing
-                            withAnimation(.easeIn(duration: 0.2)) {
-                                videoDetailsX += Constants.screenWidth * 0.66
-                            }
-                            withAnimation(.easeOut(duration: 0.2)) {
-                                scrollListX -= Constants.screenWidth * 0.66
-                                scrollListGradientLineX -= Constants.screenWidth * 0.66
-                            }
-                        }
-                        showScrollList += 1
                         
                     }, label: {
                         ZStack{
                             Image("ForwardButtonBackground")
                                 .resizable()
                                 .scaledToFit()
-                            Text("Next")
+                            Text(showScrollList == true ? "Next" : "Play")
                                 .font(Font.system(size: 16))
                                 .foregroundColor(.black)
                                 .bold()
+                                .offset(x: -5)
                         }
                     })
                 }
@@ -169,7 +173,7 @@ struct YTView: View {
                     }
             }
             
-            VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration: videoContent.ytVideoDuration.duration, published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16)
+            VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration: getYTDuration(durationString: videoContent.ytVideoDuration.duration) , published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16)
                 .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
     
         }

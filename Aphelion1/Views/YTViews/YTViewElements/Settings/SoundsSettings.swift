@@ -1,15 +1,39 @@
 //
-//  SpeedStepper.swift
+//  SoundsSettings.swift
 //  Aphelion1
 //
-//  Created by Jay on 2021/7/2.
+//  Created by Jay on 2021/7/18.
 //
 
 import SwiftUI
 
-struct TileSpeedStepper: View {
+struct SoundEffectsButton: View {
     
-    @State var tileSpeed10 = 5 - Int((tileSpeed - tileSpeedOriginal) / 0.1)
+    @State var _soundEffectsOff = soundEffectsOff
+    var fontSize: CGFloat
+    
+    var body: some View {
+        Button(action: {
+            if _soundEffectsOff == false {
+                soundEffectsOff = true
+                _soundEffectsOff = true
+            }
+            else {
+                soundEffectsOff = false
+                _soundEffectsOff = false
+            }
+        }, label: {
+            Text(_soundEffectsOff == false ? "On" :"Off")
+                .font(Font.system(size: fontSize))
+                .foregroundColor(.white)
+                .bold()
+        })
+    }
+}
+
+struct AudioOffsetStepper: View {
+    
+    @State var _audioOffset = audioOffset
     var width: CGFloat
     var height: CGFloat
     var spacing: CGFloat
@@ -23,9 +47,9 @@ struct TileSpeedStepper: View {
             HStack(spacing: spacing) {
                 //minus
                 Button(action: {
-                    if tileSpeed10 > 1 {
-                        tileSpeed += 0.1
-                        tileSpeed10 -= 1
+                    if audioOffset > -20 {
+                        audioOffset -= 1
+                        _audioOffset -= 1
                     }
                 }, label: {
                     Image(systemName: "minus")
@@ -37,15 +61,15 @@ struct TileSpeedStepper: View {
                         .contentShape(Rectangle())
                 })
                 //number
-                Text(String(tileSpeed10))
+                Text(String(_audioOffset))
                     .font(.custom("Avenir Next Regular", size: height - 5))
                     .foregroundColor(.white)
-                    .frame(width: height)
+                    .frame(width: width * 0.4)
                 //plus
                 Button(action: {
-                    if tileSpeed10 < 10 {
-                        tileSpeed -= 0.1
-                        tileSpeed10 += 1
+                    if audioOffset < 20 {
+                        audioOffset += 1
+                        _audioOffset += 1
                     }
                 }, label: {
                     Image(systemName: "plus")
@@ -61,8 +85,8 @@ struct TileSpeedStepper: View {
     }
 }
 
-struct TileSpeedStepper_Previews: PreviewProvider {
+struct SoundsSettings_Previews: PreviewProvider {
     static var previews: some View {
-        TileSpeedStepper(width: 94, height: 20, spacing: 12)
+        AudioOffsetStepper(width: 80, height: 20, spacing: 2)
     }
 }
