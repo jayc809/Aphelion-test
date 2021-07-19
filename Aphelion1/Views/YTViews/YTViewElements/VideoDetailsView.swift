@@ -22,6 +22,8 @@ struct VideoDetailsView: View {
     @State var settingsX: CGFloat = 0
     @State var detailsModuleX: CGFloat = 0
     @State var settingsModuleX: CGFloat = 0
+    @State var scrollContent = 1
+    @State var scrollSettings = 1
     
     let animationLength = 0.2
     var leftTab: CGFloat {
@@ -35,7 +37,7 @@ struct VideoDetailsView: View {
     }
     
     var moduleNameWidth: CGFloat {
-        return width * 0.5
+        return width * 0.45
     }
     var leftModule: CGFloat {
         return -moduleNameWidth * 0.7
@@ -58,7 +60,9 @@ struct VideoDetailsView: View {
             HStack {
                 
                 Button(action: {
-                    if currModuleName == "Track Details" {                        currModuleName = "Settings"
+                    if currModuleName == "Track Details" {
+                        scrollSettings += 1
+                        currModuleName = "Settings"
                         settingsX = leftTab
                         settingsModuleX = leftModule
                         detailsX = centerTab
@@ -71,6 +75,7 @@ struct VideoDetailsView: View {
                         }
                     }
                     else if currModuleName == "Settings" {
+                        scrollContent += 1
                         currModuleName = "Track Details"
                         detailsX = leftTab
                         detailsModuleX = leftModule
@@ -89,6 +94,7 @@ struct VideoDetailsView: View {
                         .scaledToFit()
                         .frame(width: moduleNameFontSize * 0.6)
                         .foregroundColor(.white)
+                        .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
                         .contentShape(Rectangle())
                 })
                 
@@ -114,6 +120,7 @@ struct VideoDetailsView: View {
                 Button(action: {
                     
                     if currModuleName == "Settings" {
+                        scrollContent += 1
                         currModuleName = "Track Details"
                         detailsX = rightTab
                         detailsModuleX = rightModule
@@ -125,8 +132,12 @@ struct VideoDetailsView: View {
                             settingsX = leftTab
                             settingsModuleX = leftModule
                         }
+                        settingsX = rightTab
+                        settingsModuleX = rightModule
                     }
-                    else if currModuleName == "Track Details" {                        currModuleName = "Settings"
+                    else if currModuleName == "Track Details" {
+                        scrollSettings += 1
+                        currModuleName = "Settings"
                         settingsX = rightTab
                         settingsModuleX = rightModule
                         detailsX = centerTab
@@ -137,6 +148,8 @@ struct VideoDetailsView: View {
                             detailsX = leftTab
                             detailsModuleX = leftModule
                         }
+                        detailsX = rightTab
+                        detailsModuleX = rightModule
                     }
                     
                 }, label: {
@@ -145,22 +158,23 @@ struct VideoDetailsView: View {
                         .scaledToFit()
                         .frame(width: moduleNameFontSize * 0.6)
                         .foregroundColor(.white)
+                        .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
                         .contentShape(Rectangle())
                 })
             }
-            .padding(.bottom, 10)
-            .padding(.top, 40)
+            .padding(.bottom, 45)
+            .padding(.top, 35)
             
             GeometryReader { geometry in
                 ZStack {
                     
-                    VideoContentView(title: title, channel: channel, duration: duration, published: published, description: description, width: width, fontSize: fontSize)
+                    VideoContentView(title: title, channel: channel, duration: duration, published: published, description: description, width: width, fontSize: fontSize, scroll: $scrollContent)
                         .onAppear {
                             detailsX = centerTab
                         }
                         .position(x: detailsX, y: geometry.size.height * 0.5)
                 
-                    GameSettingsView(width: width, fontSize: fontSize)
+                    GameSettingsView(width: width, fontSize: fontSize, scroll: $scrollSettings)
                         .onAppear {
                             settingsX = leftTab
                         }
@@ -183,36 +197,40 @@ struct VideoContentView: View {
     var description: String
     var width: CGFloat
     var fontSize: CGFloat
+    @Binding var scroll: Int
     
     var body: some View {
         
-        let padding = fontSize * 0.3
+        ScrollViewReader { proxy in
         
-        ScrollView(showsIndicators: false) {
-            
-            VStack(alignment: .leading) {
+            ScrollView(showsIndicators: false) {
                 
-            Text(title)
-                .font(Font.system(size: fontSize * 1.25))
-                .padding(.bottom, padding)
-                .padding(.top, 10)
-            Text("Artist - \(channel)")
-                .font(Font.system(size: fontSize))
-                .padding(.vertical, padding)
-            Text("Duration - \(duration)")
-                .font(Font.system(size: fontSize))
-                .padding(.vertical, padding)
-            Text("Published - \(published)")
-                .font(Font.system(size: fontSize))
-                .padding(.vertical, padding)
-            Text("Description - ")
-                .font(Font.system(size: fontSize))
-                .padding(.vertical, padding)
-            Text(description)
-                .font(Font.system(size: fontSize))
+                VStack(alignment: .leading, spacing: 8) {
+                    VStack {
+                        Text(title)
+                            .font(Font.system(size: fontSize * 1.25))
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(width: width)
+                    .padding(.bottom, 7)
+                    .id(1)
+                    Text("Artist - \(channel)")
+                        .font(Font.system(size: fontSize))
+                    Text("Duration - \(duration)")
+                        .font(Font.system(size: fontSize))
+                    Text("Published - \(published)")
+                        .font(Font.system(size: fontSize))
+                    Text("Description - ")
+                        .font(Font.system(size: fontSize))
+                    Text(description)
+                        .font(Font.system(size: fontSize))
+                }
+            }
+            .frame(width: width)
+            .onChange(of: scroll) { value in
+                proxy.scrollTo(1, anchor: .top)
             }
         }
-        .frame(width: width)
     }
     
 }
@@ -221,138 +239,159 @@ struct GameSettingsView: View {
     
     var width: CGFloat
     var fontSize: CGFloat
+    @Binding var scroll: Int
     
     var body: some View {
         
-        let gridLayout = [GridItem(.fixed(width * 0.4)), GridItem(.fixed(width * 0.6))]
         let maxFrame = width * 0.4
-        let gridSpacing = fontSize * 0.8
-        let gridPadding = fontSize * 0.45
+        let leadingPadding:CGFloat = 0 //fontSize * 0.45
         
-        ScrollView(showsIndicators: false) {
+        ScrollViewReader { proxy in
             
-            Text("Gameplay")
-                .font(Font.system(size: fontSize * 1.25))
-                .padding(.top, 10)
-            LazyVGrid(columns: gridLayout, alignment: .leading, spacing: gridSpacing) {
+            ScrollView(showsIndicators: false) {
                 
-                Text("Difficulty")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    DifficultyButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
+                VStack(spacing: 8) {
+                    
+                    Group {
+                        Text("Gameplay")
+                            .font(Font.system(size: fontSize * 1.25))
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom, 7)
+                            .id(1)
+                        HStack {
+                            Text("Difficulty")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            DifficultyButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+                        HStack {
+                            Text("Note Speed")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            TileSpeedStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.6)
+                                .padding(.vertical, -1)
+                                .frame(width: maxFrame)
+                        }
+                        HStack {
+                            Text("Slide Notes")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            SlideNoteButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+                        HStack {
+                            Text("Divine Boost")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            DivineBoostButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+                    }
+                    Group {
+                        Text("Visuals")
+                            .font(Font.system(size: fontSize * 1.25))
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 15)
+                            .padding(.bottom, 7)
+                        
+                        HStack {
+                            Text("Note Theme")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            TileThemeButton(height: fontSize + 5)
+                                .padding(.vertical, -2.5)
+                                .frame(width: maxFrame)
+                                .offset(y: 1.5)
+                        }
+                            
+                        HStack {
+                            Text("Animation Quality")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            AnimationQualityButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+                        
+                        
+                        HStack {
+                            Text("Animation Offset")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            AnimationOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
+                                .frame(width: maxFrame)
+                        }
+                        
+                        HStack {
+                            Text("Background")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            GameBackgroundButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+        
+                        HStack {
+                            Text("Brightness & Saturation")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            BrightnessAndSaturationButton(arrowWidth: width * 0.05)
+                                .frame(width: maxFrame)
+                        }
+                    }
+                    
+                    Group {
+                        Text("Sounds")
+                            .font(Font.system(size: fontSize * 1.25))
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 15)
+                            .padding(.bottom, 7)
+                        HStack {
+                            Text("Sound Effects")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            SoundEffectsButton(fontSize: fontSize)
+                                .frame(width: maxFrame)
+                        }
+                        HStack {
+                            Text("Audio Offset")
+                                .font(Font.system(size: fontSize))
+                                .padding(.leading, leadingPadding)
+                                .frame(width: maxFrame, alignment: .leading)
+                            Spacer()
+                            AudioOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
+                                .frame(width: maxFrame)
+                        }
+                    }
                 }
-                
-                Text("Note Speed")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    TileSpeedStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.6)
-                        .padding(.vertical, -1)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Slide Notes")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    SlideNoteButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Divine Boost")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    DivineBoostButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
-                }
+                .frame(width: width)
+            
             }
-            
-            Text("Visuals")
-                .font(Font.system(size: fontSize * 1.25))
-                .padding(.top, 20)
-            LazyVGrid(columns: gridLayout, alignment: .leading, spacing: gridSpacing) {
-                
-                Text("Note Theme")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    TileThemeButton(height: fontSize + 5)
-                        .padding(.vertical, -2.5)
-                        .frame(width: maxFrame)
-                        .offset(y: 1.5)
-                }
-                
-                Text("Animation Quality")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    AnimationQualityButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Animation Offset")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    AnimationOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Background")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    GameBackgroundButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Brightness & Saturation")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    BrightnessAndSaturationButton(arrowWidth: width * 0.05)
-                        .frame(width: maxFrame)
-                }
-            }
-            
-            Text("Sounds")
-                .font(Font.system(size: fontSize * 1.25))
-                .padding(.top, 20)
-            LazyVGrid(columns: gridLayout, alignment: .leading, spacing: gridSpacing) {
-                
-                Text("Sound Effects")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    SoundEffectsButton(fontSize: fontSize)
-                        .frame(width: maxFrame)
-                }
-                
-                Text("Audio Offset")
-                    .font(Font.system(size: fontSize))
-                    .padding(.leading, gridPadding)
-                HStack {
-                    Spacer()
-                    AudioOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
-                        .frame(width: maxFrame)
-                }
+            .onChange(of: scroll) { value in
+                proxy.scrollTo(1, anchor: .top)
             }
             
         }
-        .frame(width: width)
+        
     }
 }
 

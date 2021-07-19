@@ -16,9 +16,9 @@ struct YTView: View {
     @State var selectedVideoInfo = YTVideoInfo()
     @State var searchedCount = 0
     @State var showScrollList = true
-    @State var scrollListX = Constants.screenWidth * 0.73
-    @State var videoDetailsX = Constants.screenWidth * 1.41
-    @State var scrollListGradientLineX = Constants.screenWidth * 0.96
+    @State var scrollListX = Constants.screenWidth * 0.74
+    @State var scrollListGradientLineX = Constants.screenWidth * 0.97
+    @State var videoDetailsX = Constants.screenWidth * 1.425
     
     let infoVStackX = Constants.screenWidth * 0.29
     let infoWidth = Constants.screenWidth * 0.47
@@ -117,7 +117,7 @@ struct YTView: View {
                     })
                     Button(action: {
                         
-                        if showScrollList == true {
+                        if showScrollList == true && selectedVideoInfo.videoId != "" {
                             //video list is showing
                             videoContent.getYTVideoContent(videoId: selectedVideoInfo.videoId)
                             videoContent.getYTVideoDuration(videoId: selectedVideoInfo.videoId)
