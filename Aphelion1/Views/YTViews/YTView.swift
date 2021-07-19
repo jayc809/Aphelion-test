@@ -28,35 +28,13 @@ struct YTView: View {
     var body: some View {
         ZStack {
             
-            Image("test_star_background")
-                .resizable()
-            
-            Image("WhiteLine")
-                .resizable()
-                .frame(width: Constants.screenHeight * 1.2, height: 2)
-                .rotationEffect(Angle(degrees: 105))
-                .position(x: Constants.screenWidth - 15, y: Constants.screenHeight)
-            
-            Image("WhiteLine")
-                .resizable()
-                .frame(width: Constants.screenHeight * 1.2, height: 2)
-                .rotationEffect(Angle(degrees: 105))
-                .position(x: Constants.screenWidth - 30, y: Constants.screenHeight)
-            
-            Image("WhiteLine")
-                .resizable()
-                .frame(width: Constants.screenHeight * 1.2, height: 2)
-                .rotationEffect(Angle(degrees: 105))
-                .position(x: 15, y: 0)
-            
-            Image("WhiteLine")
-                .resizable()
-                .frame(width: Constants.screenHeight * 1.2, height: 2)
-                .rotationEffect(Angle(degrees: 105))
-                .position(x: 30, y: 0)
+            //background
+            LoopVideo()
+                .scaledToFill()
+                .frame(width: Constants.screenWidth, height: Constants.screenHeight)
+                .ignoresSafeArea()
             
             VStack {
-                
                 //search bar
                 VStack {
                     SearchBarElement(searchedCount: $searchedCount, width: infoWidth, fontSize: 18, offset: 0)
@@ -177,5 +155,6 @@ struct YTView: View {
                 .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
     
         }
+        
     }
 }

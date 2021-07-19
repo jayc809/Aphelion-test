@@ -8,12 +8,15 @@
 import SwiftUI
 import AVKit
 
-var videoFile = "GHOST.mp4"
-
 class PlayerManager: ObservableObject {
     
-    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: videoFile)!))
+    var player = AVPlayer()
     @Published private var playing = false
+    
+    init(file: String) {
+        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: file)!))
+        print(URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: file)!))
+    }
     
     func play() {
         player.play()

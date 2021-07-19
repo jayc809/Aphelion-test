@@ -14,7 +14,7 @@ var timerHold = Timer.publish(every: 0.15, on: .current, in: .common).autoconnec
 struct GameView: View {
     
     @ObservedObject var gameModel = GameModel()
-    @StateObject var playerManager = PlayerManager()
+    @StateObject var playerManager = PlayerManager(file: "GHOST.mp4")
     
     @State var combo = 0
     @State var score = 0

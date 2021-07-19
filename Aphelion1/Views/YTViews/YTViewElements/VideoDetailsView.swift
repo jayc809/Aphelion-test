@@ -224,6 +224,7 @@ struct VideoContentView: View {
                         .font(Font.system(size: fontSize))
                     Text(description)
                         .font(Font.system(size: fontSize))
+                        .padding(.bottom, 40)
                 }
             }
             .frame(width: width)
@@ -381,6 +382,7 @@ struct GameSettingsView: View {
                             AudioOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
                                 .frame(width: maxFrame)
                         }
+                        .padding(.bottom, 40)
                     }
                 }
                 .frame(width: width)

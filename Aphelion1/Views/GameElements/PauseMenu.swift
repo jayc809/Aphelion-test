@@ -84,7 +84,7 @@ struct PauseMenu: View {
 //for preview
 struct PauseMenu2: View {
     
-    var player = PlayerManager()
+    var player = PlayerManager(file: "GHOST.mp4")
     @State var pause = true
     
     var body: some View {
