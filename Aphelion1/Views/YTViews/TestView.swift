@@ -10,12 +10,11 @@ import SwiftUI
 struct TestView: View {
     
     @State var searchedCount = 0
+    let infoVStackX = Constants.screenWidth * 0.29
 
     var body: some View {
-        VStack {
-            Spacer()
-            SearchBarElement(searchedCount: $searchedCount, width: 300, fontSize: 20, offset: 0)
-            Spacer()
+        GeometryReader { geometry in
+            YTView()
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
     }

@@ -25,6 +25,8 @@ struct VideoDetailsView: View {
     @State var scrollContent = 1
     @State var scrollSettings = 1
     
+    @Binding var refresh: Int
+    
     let animationLength = 0.2
     var leftTab: CGFloat {
         return -width * 0.7
@@ -59,34 +61,13 @@ struct VideoDetailsView: View {
             //buttons
             HStack {
                 
+                //left arrow
                 Button(action: {
                     if currModuleName == "Track Details" {
-                        scrollSettings += 1
-                        currModuleName = "Settings"
-                        settingsX = leftTab
-                        settingsModuleX = leftModule
-                        detailsX = centerTab
-                        detailsModuleX = centerModule
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            settingsX = centerTab
-                            settingsModuleX = centerModule
-                            detailsX = rightTab
-                            detailsModuleX = rightModule
-                        }
+                        swipeRightDetailsToSettings()
                     }
                     else if currModuleName == "Settings" {
-                        scrollContent += 1
-                        currModuleName = "Track Details"
-                        detailsX = leftTab
-                        detailsModuleX = leftModule
-                        settingsX = centerTab
-                        settingsModuleX = centerModule
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            detailsX = centerTab
-                            detailsModuleX = centerModule
-                            settingsX = rightTab
-                            settingsModuleX = rightModule
-                        }
+                        swipeRightSettingsToDetails()
                     }
                 }, label: {
                     Image(systemName: "arrowtriangle.left.fill")
@@ -98,6 +79,7 @@ struct VideoDetailsView: View {
                         .contentShape(Rectangle())
                 })
                 
+                //module name
                 ZStack {
                     Text("Content")
                         .font(Font.system(size: moduleNameFontSize))
@@ -117,39 +99,14 @@ struct VideoDetailsView: View {
                 .frame(width: moduleNameWidth, height: moduleNameFontSize)
                 .clipped()
                 
+                //right arrow
                 Button(action: {
                     
                     if currModuleName == "Settings" {
-                        scrollContent += 1
-                        currModuleName = "Track Details"
-                        detailsX = rightTab
-                        detailsModuleX = rightModule
-                        settingsX = centerTab
-                        settingsModuleX = centerModule
-                        withAnimation(.easeOut(duration: animationLength)) {
-                            detailsX = centerTab
-                            detailsModuleX = centerModule
-                            settingsX = leftTab
-                            settingsModuleX = leftModule
-                        }
-                        settingsX = rightTab
-                        settingsModuleX = rightModule
+                        swipeLeftSettingsToDetails()
                     }
                     else if currModuleName == "Track Details" {
-                        scrollSettings += 1
-                        currModuleName = "Settings"
-                        settingsX = rightTab
-                        settingsModuleX = rightModule
-                        detailsX = centerTab
-                        detailsModuleX = centerModule
-                        withAnimation(.easeOut(duration: animationLength)) {
-                            settingsX = centerTab
-                            settingsModuleX = centerModule
-                            detailsX = leftTab
-                            detailsModuleX = leftModule
-                        }
-                        detailsX = rightTab
-                        detailsModuleX = rightModule
+                        swipeLeftDetailsToSettings()
                     }
                     
                 }, label: {
@@ -165,6 +122,7 @@ struct VideoDetailsView: View {
             .padding(.top, 35)
             .padding(.bottom, 40)
             
+            //modules
             GeometryReader { geometry in
                 ZStack {
                     
@@ -185,6 +143,104 @@ struct VideoDetailsView: View {
         }
         .frame(width: width, height:  Constants.screenHeight)
         .clipped()
+        .onTapGesture {}
+        .gesture(swipe)
+        .onChange(of: refresh, perform: { value in
+            detailsX = centerTab
+            detailsModuleX = centerModule
+            settingsX = rightTab
+            settingsModuleX = rightModule
+        })
+    }
+    
+    var swipe: some Gesture {
+        
+        DragGesture(minimumDistance: 0)
+            .onEnded({ swipe in
+            
+                if swipe.translation.width < -width * 0.3 && abs(swipe.translation.height) < 100 {
+                    //left
+                    if currModuleName == "Settings" {
+                        swipeLeftSettingsToDetails()
+                    }
+                    else if currModuleName == "Track Details" {
+                        swipeLeftDetailsToSettings()
+                    }
+                }
+                else if swipe.translation.width > width * 0.3 && abs(swipe.translation.height) < 100 {
+                    //right
+                    if currModuleName == "Track Details" {
+                        swipeRightDetailsToSettings()
+                    }
+                    else if currModuleName == "Settings" {
+                        swipeRightSettingsToDetails()
+                    }
+                }
+            })
+    }
+    
+    func swipeRightDetailsToSettings() {
+        scrollSettings += 1
+        currModuleName = "Settings"
+        settingsX = leftTab
+        settingsModuleX = leftModule
+        detailsX = centerTab
+        detailsModuleX = centerModule
+        withAnimation(.easeOut(duration: 0.2)) {
+            settingsX = centerTab
+            settingsModuleX = centerModule
+            detailsX = rightTab
+            detailsModuleX = rightModule
+        }
+    }
+    
+    func swipeRightSettingsToDetails() {
+        scrollContent += 1
+        currModuleName = "Track Details"
+        detailsX = leftTab
+        detailsModuleX = leftModule
+        settingsX = centerTab
+        settingsModuleX = centerModule
+        withAnimation(.easeOut(duration: 0.2)) {
+            detailsX = centerTab
+            detailsModuleX = centerModule
+            settingsX = rightTab
+            settingsModuleX = rightModule
+        }
+    }
+    
+    func swipeLeftDetailsToSettings() {
+        scrollSettings += 1
+        currModuleName = "Settings"
+        settingsX = rightTab
+        settingsModuleX = rightModule
+        detailsX = centerTab
+        detailsModuleX = centerModule
+        withAnimation(.easeOut(duration: animationLength)) {
+            settingsX = centerTab
+            settingsModuleX = centerModule
+            detailsX = leftTab
+            detailsModuleX = leftModule
+        }
+        detailsX = rightTab
+        detailsModuleX = rightModule
+    }
+    
+    func swipeLeftSettingsToDetails() {
+        scrollContent += 1
+        currModuleName = "Track Details"
+        detailsX = rightTab
+        detailsModuleX = rightModule
+        settingsX = centerTab
+        settingsModuleX = centerModule
+        withAnimation(.easeOut(duration: animationLength)) {
+            detailsX = centerTab
+            detailsModuleX = centerModule
+            settingsX = leftTab
+            settingsModuleX = leftModule
+        }
+        settingsX = rightTab
+        settingsModuleX = rightModule
     }
 }
 
@@ -396,10 +452,10 @@ struct GameSettingsView: View {
         
     }
 }
-
-struct VideoDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        //GameSettingsView(width: 300, fontSize: 20)
-        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20)
-    }
-}
+//
+//struct VideoDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameSettingsView(width: 300, fontSize: 20)
+////        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20)
+//    }
+//}

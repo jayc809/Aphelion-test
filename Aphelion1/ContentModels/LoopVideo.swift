@@ -32,7 +32,7 @@ class LoopingPlayerUIView: UIView {
         super.init(frame: frame)
 
         // Load the resource
-        let fileUrl = Bundle.main.url(forAuxiliaryExecutable: "STARBURST.mp4")!
+        let fileUrl = Bundle.main.url(forAuxiliaryExecutable: "STARBURSTREVERSE.mp4")!
         let asset = AVAsset(url: fileUrl)
         let item = AVPlayerItem(asset: asset)
         
