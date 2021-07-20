@@ -23,7 +23,7 @@
 		693E6FB126A4B7CA00C540CE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E6FB026A4B7CA00C540CE /* TestView.swift */; };
 		693E6FBB26A6395C00C540CE /* GETCHA.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 693E6FBA26A6395C00C540CE /* GETCHA.mp4 */; };
 		693E6FBF26A63C5800C540CE /* LoopVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E6FBE26A63C5800C540CE /* LoopVideo.swift */; };
-		693E6FC326A63DF300C540CE /* STARBURST.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 693E6FC226A63DF300C540CE /* STARBURST.mp4 */; };
+		693E6FC526A6C2EA00C540CE /* STARBURST.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 693E6FC426A6C2EA00C540CE /* STARBURST.mp4 */; };
 		698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813AE269AE96000E955A8 /* ThumbnailElement.swift */; };
 		698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BD269E104600E955A8 /* SearchBarElement.swift */; };
 		698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698813BF269E1D1200E955A8 /* HighScoreElement.swift */; };
@@ -72,7 +72,7 @@
 		693E6FB026A4B7CA00C540CE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		693E6FBA26A6395C00C540CE /* GETCHA.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = GETCHA.mp4; sourceTree = "<group>"; };
 		693E6FBE26A63C5800C540CE /* LoopVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopVideo.swift; sourceTree = "<group>"; };
-		693E6FC226A63DF300C540CE /* STARBURST.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STARBURST.mp4; sourceTree = "<group>"; };
+		693E6FC426A6C2EA00C540CE /* STARBURST.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STARBURST.mp4; sourceTree = "<group>"; };
 		698813AE269AE96000E955A8 /* ThumbnailElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailElement.swift; sourceTree = "<group>"; };
 		698813BD269E104600E955A8 /* SearchBarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarElement.swift; sourceTree = "<group>"; };
 		698813BF269E1D1200E955A8 /* HighScoreElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreElement.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		69CDAA51268E198600CD95A3 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				693E6FC226A63DF300C540CE /* STARBURST.mp4 */,
+				693E6FC426A6C2EA00C540CE /* STARBURST.mp4 */,
 				693E6FBA26A6395C00C540CE /* GETCHA.mp4 */,
 				69CDAA52268E19A100CD95A3 /* GHOST.mp4 */,
 				69CDAA53268E19A100CD95A3 /* KING.mp4 */,
@@ -368,7 +368,7 @@
 				699E9C7B267F77DF00AFFF8D /* Assets.xcassets in Resources */,
 				693E6FBB26A6395C00C540CE /* GETCHA.mp4 in Resources */,
 				69CDAA56268E19A200CD95A3 /* KING.mp4 in Resources */,
-				693E6FC326A63DF300C540CE /* STARBURST.mp4 in Resources */,
+				693E6FC526A6C2EA00C540CE /* STARBURST.mp4 in Resources */,
 				69CDAA4C268E194600CD95A3 /* GillSans.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

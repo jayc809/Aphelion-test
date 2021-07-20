@@ -162,8 +162,8 @@ struct VideoDetailsView: View {
                         .contentShape(Rectangle())
                 })
             }
-            .padding(.bottom, 45)
             .padding(.top, 35)
+            .padding(.bottom, 40)
             
             GeometryReader { geometry in
                 ZStack {

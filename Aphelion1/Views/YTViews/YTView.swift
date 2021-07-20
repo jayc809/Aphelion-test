@@ -34,8 +34,9 @@ struct YTView: View {
                 .frame(width: Constants.screenWidth, height: Constants.screenHeight)
                 .ignoresSafeArea()
             
+            //info stack
             VStack {
-                //search bar
+                //search bar placement
                 VStack {
                     SearchBarElement(searchedCount: $searchedCount, width: infoWidth, fontSize: 18, offset: 0)
                     Image("GradientLine")
@@ -43,6 +44,7 @@ struct YTView: View {
                         .frame(width: infoWidth, height: gradientLineHeight)
                         .offset(y: -6)
                 }
+                .opacity(0)
                 
                 //thumbnail and high score
                 ZStack {
@@ -153,6 +155,16 @@ struct YTView: View {
             
             VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration: getYTDuration(durationString: videoContent.ytVideoDuration.duration) , published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16)
                 .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
+            
+            //search bar
+            VStack {
+                SearchBarElement(searchedCount: $searchedCount, width: infoWidth, fontSize: 18, offset: 0)
+                Image("GradientLine")
+                    .resizable()
+                    .frame(width: infoWidth, height: gradientLineHeight)
+                    .offset(y: -6)
+            }
+            .position(x: infoVStackX, y: Constants.screenHeight * 0.135)
     
         }
         
