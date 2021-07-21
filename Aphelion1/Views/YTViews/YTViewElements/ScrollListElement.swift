@@ -28,7 +28,7 @@ struct ScrollListElement: View {
                     VStack {
                         ZStack {
                             //background
-                            Image(selectedVideoInfo.videoId == ytVideoInfo.videoId ? "YTRowSelected" : "YTRow")
+                            Image(selectedVideoInfo.videoId == ytVideoInfo.videoId ? "YTRowSelected" : "YTRowGradient")
                                 .resizable()
                                 .scaledToFit()
                             //text
@@ -67,7 +67,7 @@ struct ScrollListElement: View {
                     .rotationEffect(Angle(degrees: -15))
                 }
             }
-            .padding(.vertical, Constants.screenHeight * 0.6)
+            .padding(.vertical, Constants.screenHeight * 0.65)
         }
         .frame(width: Constants.screenWidth, height: Constants.screenHeight * 1.4)
         .rotationEffect(Angle(degrees: 15))

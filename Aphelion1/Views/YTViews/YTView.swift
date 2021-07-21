@@ -119,6 +119,7 @@ struct YTView: View {
                         })
                     }
                     .frame(width: Constants.screenWidth * 0.38)
+                    .hueRotation(determineHue(combo: 0))
                     
                 }
                 .frame(width: Constants.screenWidth * 0.5, height: Constants.screenHeight)

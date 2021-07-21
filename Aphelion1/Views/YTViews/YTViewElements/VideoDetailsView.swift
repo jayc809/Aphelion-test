@@ -146,6 +146,7 @@ struct VideoDetailsView: View {
         .onTapGesture {}
         .gesture(swipe)
         .onChange(of: refresh, perform: { value in
+            currModuleName = "Track Details"
             detailsX = centerTab
             detailsModuleX = centerModule
             settingsX = rightTab

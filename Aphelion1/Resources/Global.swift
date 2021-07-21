@@ -14,7 +14,7 @@ var tileSpeed = 1.1
 var tileSpeedOriginal = 1.1
 var animationQuality = 3 // 1 - stable, 2 - smooth, 3 - best
 var useBackground = 1 // 1 - video, 2 - user image, 3 - thumbnail
-var detectPosition = Constants.screenHeight * 0.55
+var detectPosition = Constants.screenHeight * 0.6
 var slideNoteOff = false
 var divineBoostOff = false
 

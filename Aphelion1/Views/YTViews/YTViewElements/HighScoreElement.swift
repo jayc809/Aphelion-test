@@ -66,7 +66,7 @@ struct HighScoreElement: View {
             Image("\(tier)Tier")
                 .resizable()
                 .scaledToFit()
-                .frame(width: width * 0.5)
+                .frame(width: width * 0.4)
                 .offset(x: -width * 0.18, y: -width * 0.26)
             
         }

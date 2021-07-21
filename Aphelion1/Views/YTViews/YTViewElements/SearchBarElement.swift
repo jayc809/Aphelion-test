@@ -31,48 +31,50 @@ struct SearchBarElement: View {
             }
                     
             ZStack {
-                //text showing
-                if showYTLogo {
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: fontSize)
-                            .padding(.trailing, padding * 1.5)
-                        Text("Search")
-                            .font(Font.system(size: fontSize))
-                            .padding(.trailing, padding * 0.3)
-                        Image("yt_logo_mono_dark")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: fontSize)
-                        Spacer()
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: fontSize)
+                        .padding(.trailing, padding * 1.5)
+                    
+                    ZStack(alignment: .leading) {
+                        if showYTLogo {
+                            HStack {
+                                //text showing
+                                Text("Search")
+                                    .font(Font.system(size: fontSize))
+                                    .padding(.trailing, padding * 0.3)
+                                Image("yt_logo_mono_dark")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: fontSize)
+                                Spacer()
+                            }
+                        }
+                        //text input
+                        TextField(
+                            "",
+                            text: $searchKeyword,
+                            onCommit: {
+                                searchWord = searchKeyword
+                                searchedCount += 1
+                            }
+                        )
+                        .onChange(of: searchKeyword, perform: { value in
+                            if searchKeyword == "" {
+                                showYTLogo = true
+                            }
+                            else {
+                                showYTLogo = false
+                            }
+                        })
+                        .font(Font.system(size: fontSize))
+                        .lineLimit(1)
+                        .frame(height: height)
                     }
-                    .padding(.leading, padding)
                 }
-                
-                //text input
-                TextField(
-                    "",
-                    text: $searchKeyword,
-                    onCommit: {
-                        searchWord = searchKeyword
-                        searchedCount += 1
-                    }
-                )
-                .onChange(of: searchKeyword, perform: { value in
-                    if searchKeyword == "" {
-                        showYTLogo = true
-                    }
-                    else {
-                        showYTLogo = false
-                    }
-                })
-                .font(Font.system(size: fontSize))
-                .lineLimit(1)
-                .frame(height: height)
                 .padding(.leading, padding)
-                
             }
             
         }
