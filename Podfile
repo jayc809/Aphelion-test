@@ -7,5 +7,6 @@ target 'Aphelion1' do
 
   # Pods for Aphelion1
   pod 'Alamofire', '~> 5.4'
+  pod "youtube-ios-player-helper", "~> 1.0.3"
 
 end

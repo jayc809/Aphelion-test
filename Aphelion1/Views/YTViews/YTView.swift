@@ -35,7 +35,7 @@ struct YTView: View {
                     .frame(width: Constants.screenWidth, height: Constants.screenHeight)
                     .ignoresSafeArea()
                 
-                VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration: getYTDuration(durationString: videoContent.ytVideoDuration.duration) , published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16, refresh: $refresh)
+                VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration:videoContent.ytVideoDuration.duration, published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16, refresh: $refresh)
                     .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
                 
                 //info stack

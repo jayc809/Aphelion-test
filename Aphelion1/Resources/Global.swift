@@ -67,6 +67,7 @@ class Constants {
     //youtube
     static let apiUrl = "https://www.googleapis.com/youtube/v3"
     static let apiKey = "AIzaSyBld05sx_Mo76i7WdjhuAPdfv2nUVmrx50"
+    static let embedUrl = "https://www.youtube.com/embed/"
     
 }
 

@@ -11,9 +11,8 @@ import SwiftUI
 struct Aphelion1App: App {
     var body: some Scene {
         WindowGroup {
+            YoutubeVideoPlayer(videoID: "dneWF0VFBo0")
             //TestView()
-            YTView()
-            //GameView()
         }
     }
 }

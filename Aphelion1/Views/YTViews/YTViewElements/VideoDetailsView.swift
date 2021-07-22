@@ -273,6 +273,7 @@ struct VideoContentView: View {
                     .id(1)
                     Text("Artist - \(channel)")
                         .font(Font.system(size: fontSize))
+                    let _duration = getYTDuration(durationString: duration)
                     Text("Duration - \(duration)")
                         .font(Font.system(size: fontSize))
                     Text("Published - \(published)")

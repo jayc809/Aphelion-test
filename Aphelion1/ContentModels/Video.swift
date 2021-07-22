@@ -15,7 +15,6 @@ class PlayerManager: ObservableObject {
     
     init(file: String) {
         player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: file)!))
-        print(URL(fileURLWithPath: Bundle.main.path(forAuxiliaryExecutable: file)!))
     }
     
     func play() {
@@ -36,7 +35,7 @@ class PlayerManager: ObservableObject {
 
 struct AVPlayerControllerRepresented: UIViewControllerRepresentable {
     
-    var player : AVPlayer
+    var player: AVPlayer
     
     func makeUIViewController(context: Context) -> AVPlayerViewController {
         let controller = AVPlayerViewController()
