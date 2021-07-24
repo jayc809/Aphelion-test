@@ -15,7 +15,8 @@ class YTManager: ObservableObject {
     var player = YTPlayerView()
     
     init(videoID: String) {
-        player.load(withVideoId: videoID)
+        let playerVars = ["autoplay": 1, "controls": 0, "disablekb": 1, "iv_load_policy": 3, "modestbranding": 1, "playsinline": 1, "rel": 0,  "showinfo": 0]
+        player.load(withVideoId: videoID, playerVars: playerVars)
     }
     
     func play() {
@@ -44,17 +45,17 @@ struct YTRepresented : UIViewRepresentable {
 
 struct TestView: View {
     
-    @State var timer = Timer.publish(every: 3, on: .current, in: .common).autoconnect()
+    @State var timer = Timer.publish(every: 2, on: .current, in: .common).autoconnect()
     @StateObject var ytManager = YTManager(videoID: ghostId)
-    @State var startPlaying = false
     
     var body: some View {
-        YTRepresented(player: ytManager.player)
-            .onReceive(timer, perform: { _ in
-                if startPlaying == false {
+        ZStack {
+            YTRepresented(player: ytManager.player)
+                .onReceive(timer) { _ in
                     ytManager.play()
-                    startPlaying = true
+                    timer.upstream.connect().cancel()
                 }
-            })
+                .allowsHitTesting(false)
+        }
     }
 }
