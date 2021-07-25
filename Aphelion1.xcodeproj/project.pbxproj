@@ -16,6 +16,8 @@
 		6927A3ED26A079E600009F90 /* YTVideoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3EC26A079E600009F90 /* YTVideoContent.swift */; };
 		6927A3F126A0958900009F90 /* YTContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3F026A0958900009F90 /* YTContentModel.swift */; };
 		6927A3F826A1304100009F90 /* VideoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6927A3F726A1304100009F90 /* VideoDetailsView.swift */; };
+		6934C2B426ADCB8A009FDEE9 /* GameSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934C2B326ADCB8A009FDEE9 /* GameSettingsView.swift */; };
+		6934C2B626ADD086009FDEE9 /* SettingsAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934C2B526ADD086009FDEE9 /* SettingsAnnotations.swift */; };
 		693E6FA926A377D300C540CE /* GameplaySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E6FA826A377D300C540CE /* GameplaySettings.swift */; };
 		693E6FAB26A37D9300C540CE /* VisualsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E6FAA26A37D9300C540CE /* VisualsSettings.swift */; };
 		693E6FAF26A387E600C540CE /* SoundsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E6FAE26A387E600C540CE /* SoundsSettings.swift */; };
@@ -66,6 +68,8 @@
 		6927A3EC26A079E600009F90 /* YTVideoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTVideoContent.swift; sourceTree = "<group>"; };
 		6927A3F026A0958900009F90 /* YTContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTContentModel.swift; sourceTree = "<group>"; };
 		6927A3F726A1304100009F90 /* VideoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailsView.swift; sourceTree = "<group>"; };
+		6934C2B326ADCB8A009FDEE9 /* GameSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsView.swift; sourceTree = "<group>"; };
+		6934C2B526ADD086009FDEE9 /* SettingsAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAnnotations.swift; sourceTree = "<group>"; };
 		693E6FA826A377D300C540CE /* GameplaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplaySettings.swift; sourceTree = "<group>"; };
 		693E6FAA26A37D9300C540CE /* VisualsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualsSettings.swift; sourceTree = "<group>"; };
 		693E6FAE26A387E600C540CE /* SoundsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsSettings.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				693E6FA826A377D300C540CE /* GameplaySettings.swift */,
 				693E6FAA26A37D9300C540CE /* VisualsSettings.swift */,
 				693E6FAE26A387E600C540CE /* SoundsSettings.swift */,
+				6934C2B526ADD086009FDEE9 /* SettingsAnnotations.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				6927A3F726A1304100009F90 /* VideoDetailsView.swift */,
+				6934C2B326ADCB8A009FDEE9 /* GameSettingsView.swift */,
 				6927A3E626A041F800009F90 /* ScrollListElement.swift */,
 				698813AE269AE96000E955A8 /* ThumbnailElement.swift */,
 				698813BD269E104600E955A8 /* SearchBarElement.swift */,
@@ -449,6 +455,8 @@
 				698813AF269AE96000E955A8 /* ThumbnailElement.swift in Sources */,
 				693E6FA926A377D300C540CE /* GameplaySettings.swift in Sources */,
 				698813BE269E104600E955A8 /* SearchBarElement.swift in Sources */,
+				6934C2B626ADD086009FDEE9 /* SettingsAnnotations.swift in Sources */,
+				6934C2B426ADCB8A009FDEE9 /* GameSettingsView.swift in Sources */,
 				692123D826976AA60034F6E5 /* YTVideoProcess.swift in Sources */,
 				693E6FAF26A387E600C540CE /* SoundsSettings.swift in Sources */,
 				698813C0269E1D1200E955A8 /* HighScoreElement.swift in Sources */,

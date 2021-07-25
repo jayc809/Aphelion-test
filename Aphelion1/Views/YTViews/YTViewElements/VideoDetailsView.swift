@@ -24,6 +24,7 @@ struct VideoDetailsView: View {
     @State var settingsModuleX: CGFloat = 0
     @State var scrollContent = 1
     @State var scrollSettings = 1
+    @State var showAnnotations = 1 //nothing - 1, animation offset - 2, background - 3, brightness saturation - 4, audio offset - 5
     
     @Binding var refresh: Int
     
@@ -55,103 +56,112 @@ struct VideoDetailsView: View {
     }
     
     var body: some View {
-        
-        VStack {
+        ZStack {
             
-            //buttons
-            HStack {
+            //main content
+            VStack {
                 
-                //left arrow
-                Button(action: {
-                    if currModuleName == "Track Details" {
-                        swipeRightDetailsToSettings()
-                    }
-                    else if currModuleName == "Settings" {
-                        swipeRightSettingsToDetails()
-                    }
-                }, label: {
-                    Image(systemName: "arrowtriangle.left.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: moduleNameFontSize * 0.6)
-                        .foregroundColor(.white)
-                        .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
-                        .contentShape(Rectangle())
-                })
-                
-                //module name
-                ZStack {
-                    Text("Content")
-                        .font(Font.system(size: moduleNameFontSize))
-                        .onAppear {
-                            detailsModuleX = centerModule
-                        }
-                        .position(x: detailsModuleX, y: moduleNameFontSize * 0.5)
+                //buttons
+                HStack {
                     
-                    Text("Settings")
-                        .font(Font.system(size: moduleNameFontSize))
-                        .onAppear {
-                            settingsModuleX = leftModule
+                    //left arrow
+                    Button(action: {
+                        if currModuleName == "Track Details" {
+                            swipeRightDetailsToSettings()
                         }
-                        .position(x: settingsModuleX, y: moduleNameFontSize * 0.5)
+                        else if currModuleName == "Settings" {
+                            swipeRightSettingsToDetails()
+                        }
+                    }, label: {
+                        Image(systemName: "arrowtriangle.left.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: moduleNameFontSize * 0.6)
+                            .foregroundColor(.white)
+                            .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
+                            .contentShape(Rectangle())
+                    })
+                    
+                    //module name
+                    ZStack {
+                        Text("Content")
+                            .font(Font.system(size: moduleNameFontSize))
+                            .onAppear {
+                                detailsModuleX = centerModule
+                            }
+                            .position(x: detailsModuleX, y: moduleNameFontSize * 0.5)
                         
+                        Text("Settings")
+                            .font(Font.system(size: moduleNameFontSize))
+                            .onAppear {
+                                settingsModuleX = leftModule
+                            }
+                            .position(x: settingsModuleX, y: moduleNameFontSize * 0.5)
+                            
+                    }
+                    .frame(width: moduleNameWidth, height: moduleNameFontSize)
+                    .clipped()
+                    
+                    //right arrow
+                    Button(action: {
+                        
+                        if currModuleName == "Settings" {
+                            swipeLeftSettingsToDetails()
+                        }
+                        else if currModuleName == "Track Details" {
+                            swipeLeftDetailsToSettings()
+                        }
+                        
+                    }, label: {
+                        Image(systemName: "arrowtriangle.right.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: moduleNameFontSize * 0.6)
+                            .foregroundColor(.white)
+                            .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
+                            .contentShape(Rectangle())
+                    })
                 }
-                .frame(width: moduleNameWidth, height: moduleNameFontSize)
-                .clipped()
+                .padding(.top, 35)
+                .padding(.bottom, 40)
                 
-                //right arrow
-                Button(action: {
+                //modules
+                GeometryReader { geometry in
+                    ZStack {
+                        
+                        VideoContentView(title: title, channel: channel, duration: duration, published: published, description: description, width: width, fontSize: fontSize, scroll: $scrollContent)
+                            .onAppear {
+                                detailsX = centerTab
+                            }
+                            .position(x: detailsX, y: geometry.size.height * 0.5)
                     
-                    if currModuleName == "Settings" {
-                        swipeLeftSettingsToDetails()
+                        GameSettingsView(width: width, fontSize: fontSize, scroll: $scrollSettings, showAnnotations: $showAnnotations)
+                            .onAppear {
+                                settingsX = leftTab
+                            }
+                            .position(x: settingsX, y: geometry.size.height * 0.5)
+                        
                     }
-                    else if currModuleName == "Track Details" {
-                        swipeLeftDetailsToSettings()
-                    }
-                    
-                }, label: {
-                    Image(systemName: "arrowtriangle.right.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: moduleNameFontSize * 0.6)
-                        .foregroundColor(.white)
-                        .frame(width: moduleNameFontSize * 1.2, height: moduleNameFontSize * 1.2)
-                        .contentShape(Rectangle())
-                })
+                }
             }
-            .padding(.top, 35)
-            .padding(.bottom, 40)
+            .frame(width: width, height:  Constants.screenHeight)
+            .onTapGesture {}
+            .gesture(swipe)
+            .onChange(of: refresh, perform: { value in
+                currModuleName = "Track Details"
+                detailsX = centerTab
+                detailsModuleX = centerModule
+                settingsX = rightTab
+                settingsModuleX = rightModule
+                showAnnotations = 1
+            })
             
-            //modules
-            GeometryReader { geometry in
-                ZStack {
-                    
-                    VideoContentView(title: title, channel: channel, duration: duration, published: published, description: description, width: width, fontSize: fontSize, scroll: $scrollContent)
-                        .onAppear {
-                            detailsX = centerTab
-                        }
-                        .position(x: detailsX, y: geometry.size.height * 0.5)
-                
-                    GameSettingsView(width: width, fontSize: fontSize, scroll: $scrollSettings)
-                        .onAppear {
-                            settingsX = leftTab
-                        }
-                        .position(x: settingsX, y: geometry.size.height * 0.5)
-                    
-                }
-            }
+            //annotations
+            SettingsAnnotations(showAnnotations: $showAnnotations, width: width * 0.92, fontSize: fontSize)
+                .position(x: width * 0.5, y: Constants.screenHeight * 0.6)
         }
         .frame(width: width, height:  Constants.screenHeight)
         .clipped()
-        .onTapGesture {}
-        .gesture(swipe)
-        .onChange(of: refresh, perform: { value in
-            currModuleName = "Track Details"
-            detailsX = centerTab
-            detailsModuleX = centerModule
-            settingsX = rightTab
-            settingsModuleX = rightModule
-        })
     }
     
     var swipe: some Gesture {
@@ -187,6 +197,7 @@ struct VideoDetailsView: View {
         settingsModuleX = leftModule
         detailsX = centerTab
         detailsModuleX = centerModule
+        showAnnotations = 1
         withAnimation(.easeOut(duration: 0.2)) {
             settingsX = centerTab
             settingsModuleX = centerModule
@@ -202,6 +213,7 @@ struct VideoDetailsView: View {
         detailsModuleX = leftModule
         settingsX = centerTab
         settingsModuleX = centerModule
+        showAnnotations = 1
         withAnimation(.easeOut(duration: 0.2)) {
             detailsX = centerTab
             detailsModuleX = centerModule
@@ -217,6 +229,7 @@ struct VideoDetailsView: View {
         settingsModuleX = rightModule
         detailsX = centerTab
         detailsModuleX = centerModule
+        showAnnotations = 1
         withAnimation(.easeOut(duration: animationLength)) {
             settingsX = centerTab
             settingsModuleX = centerModule
@@ -234,6 +247,7 @@ struct VideoDetailsView: View {
         detailsModuleX = rightModule
         settingsX = centerTab
         settingsModuleX = centerModule
+        showAnnotations = 1
         withAnimation(.easeOut(duration: animationLength)) {
             detailsX = centerTab
             detailsModuleX = centerModule
@@ -294,166 +308,6 @@ struct VideoContentView: View {
     
 }
 
-struct GameSettingsView: View {
-    
-    var width: CGFloat
-    var fontSize: CGFloat
-    @Binding var scroll: Int
-    
-    var body: some View {
-        
-        let maxFrame = width * 0.4
-        let leadingPadding:CGFloat = 0 //fontSize * 0.45
-        
-        ScrollViewReader { proxy in
-            
-            ScrollView(showsIndicators: false) {
-                
-                VStack(spacing: 8) {
-                    
-                    Group {
-                        Text("Gameplay")
-                            .font(Font.system(size: fontSize * 1.25))
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 7)
-                            .id(1)
-                        HStack {
-                            Text("Difficulty")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            DifficultyButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-                        HStack {
-                            Text("Note Speed")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            TileSpeedStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.6)
-                                .padding(.vertical, -1)
-                                .frame(width: maxFrame)
-                        }
-                        HStack {
-                            Text("Slide Notes")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            SlideNoteButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-                        HStack {
-                            Text("Divine Boost")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            DivineBoostButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-                    }
-                    Group {
-                        Text("Visuals")
-                            .font(Font.system(size: fontSize * 1.25))
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 15)
-                            .padding(.bottom, 7)
-                        
-                        HStack {
-                            Text("Note Theme")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            TileThemeButton(height: fontSize + 5)
-                                .padding(.vertical, -2.5)
-                                .frame(width: maxFrame)
-                                .offset(y: 1.5)
-                        }
-                            
-                        HStack {
-                            Text("Animation Quality")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            AnimationQualityButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-                        
-                        
-                        HStack {
-                            Text("Animation Offset")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            AnimationOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
-                                .frame(width: maxFrame)
-                        }
-                        
-                        HStack {
-                            Text("Background")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            GameBackgroundButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-        
-                        HStack {
-                            Text("Brightness & Saturation")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            BrightnessAndSaturationButton(arrowWidth: width * 0.05)
-                                .frame(width: maxFrame)
-                        }
-                    }
-                    
-                    Group {
-                        Text("Sounds")
-                            .font(Font.system(size: fontSize * 1.25))
-                            .multilineTextAlignment(.center)
-                            .padding(.top, 15)
-                            .padding(.bottom, 7)
-                        HStack {
-                            Text("Sound Effects")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            SoundEffectsButton(fontSize: fontSize)
-                                .frame(width: maxFrame)
-                        }
-                        HStack {
-                            Text("Audio Offset")
-                                .font(Font.system(size: fontSize))
-                                .padding(.leading, leadingPadding)
-                                .frame(width: maxFrame, alignment: .leading)
-                            Spacer()
-                            AudioOffsetStepper(width: fontSize * 5, height: fontSize + 2, spacing: fontSize * 0.15)
-                                .frame(width: maxFrame)
-                        }
-                        .padding(.bottom, 40)
-                    }
-                }
-                .frame(width: width)
-            
-            }
-            .onChange(of: scroll) { value in
-                proxy.scrollTo(1, anchor: .top)
-            }
-            
-        }
-        
-    }
-}
 
 struct VideoDetailsPreview: View {
     @State var refresh = 0
@@ -465,7 +319,6 @@ struct VideoDetailsPreview: View {
 
 struct VideoDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        //GameSettingsView(width: 300, fontSize: 20)
         VideoDetailsPreview()
     }
 }
