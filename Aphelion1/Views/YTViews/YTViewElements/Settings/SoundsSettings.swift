@@ -23,7 +23,7 @@ struct SoundEffectsButton: View {
                 _soundEffectsOff = false
             }
         }, label: {
-            Text(_soundEffectsOff == false ? "On" :"Off")
+            Text(_soundEffectsOff == false ? "Enabled" :"Disabled")
                 .font(Font.system(size: fontSize))
                 .foregroundColor(.white)
                 .bold()

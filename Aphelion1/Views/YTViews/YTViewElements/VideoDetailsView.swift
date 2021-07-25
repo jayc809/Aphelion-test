@@ -274,7 +274,7 @@ struct VideoContentView: View {
                     Text("Artist - \(channel)")
                         .font(Font.system(size: fontSize))
                     let _duration = getYTDuration(durationString: duration)
-                    Text("Duration - \(duration)")
+                    Text("Duration - \(_duration)")
                         .font(Font.system(size: fontSize))
                     Text("Published - \(published)")
                         .font(Font.system(size: fontSize))
@@ -454,10 +454,18 @@ struct GameSettingsView: View {
         
     }
 }
-//
-//struct VideoDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameSettingsView(width: 300, fontSize: 20)
-////        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20)
-//    }
-//}
+
+struct VideoDetailsPreview: View {
+    @State var refresh = 0
+    var body: some View {
+        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20, refresh: $refresh)
+    }
+}
+
+
+struct VideoDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        //GameSettingsView(width: 300, fontSize: 20)
+        VideoDetailsPreview()
+    }
+}

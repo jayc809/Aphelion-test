@@ -100,7 +100,7 @@ struct SlideNoteButton: View {
                 _slideNoteOff = false
             }
         }, label: {
-            Text(_slideNoteOff == false ? "On" :"Off")
+            Text(_slideNoteOff == false ? "Enabled" :"Disabled")
                 .font(Font.system(size: fontSize))
                 .foregroundColor(.white)
                 .bold()
@@ -123,7 +123,7 @@ struct DivineBoostButton: View {
                 _divineBoostOff = false
             }
         }, label: {
-            Text(_divineBoostOff == false ? "On" :"Off")
+            Text(_divineBoostOff == false ? "Enabled" :"Disabled")
                 .font(Font.system(size: fontSize))
                 .foregroundColor(.white)
                 .bold()
