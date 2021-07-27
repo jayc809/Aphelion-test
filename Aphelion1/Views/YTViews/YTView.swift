@@ -12,6 +12,7 @@ var searchWord = "suisei song"
 struct YTView: View {
     
     @StateObject var videoContent = YTContentModel()
+    @State var prevVideoId = ""
     @State var imageData = Data()
     @State var selectedVideoInfo = YTVideoInfo()
     @State var searchedCount = 0
@@ -20,6 +21,8 @@ struct YTView: View {
     @State var scrollListGradientLineX = Constants.screenWidth * 0.97
     @State var videoDetailsX = Constants.screenWidth * 1.425
     @State var refresh = 0
+    
+    @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     
     let infoVStackX = Constants.screenWidth * 0.29
     let infoWidth = Constants.screenWidth * 0.47
