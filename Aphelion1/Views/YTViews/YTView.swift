@@ -12,7 +12,6 @@ var searchWord = "suisei song"
 struct YTView: View {
     
     @StateObject var videoContent = YTContentModel()
-    @State var prevVideoId = ""
     @State var imageData = Data()
     @State var selectedVideoInfo = YTVideoInfo()
     @State var searchedCount = 0
@@ -21,6 +20,7 @@ struct YTView: View {
     @State var scrollListGradientLineX = Constants.screenWidth * 0.97
     @State var videoDetailsX = Constants.screenWidth * 1.425
     @State var refresh = 0
+    @State var previewAudio = false
     
     @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     
@@ -34,6 +34,7 @@ struct YTView: View {
             ZStack {
                 
                 //background
+                
                 LoopVideo()
                     .frame(width: Constants.screenWidth, height: Constants.screenHeight)
                     .ignoresSafeArea()
@@ -49,7 +50,7 @@ struct YTView: View {
                     //thumbnail and high score
                     ZStack {
                         //thumbnail
-                        ThumbnailElement(imageData: imageData, imageWidth: thumbnailWidth)
+                        ThumbnailElement(imageData: imageData, imageWidth: thumbnailWidth, videoId: selectedVideoInfo.videoId, previewAudio: $previewAudio)
                             .offset(x: (infoWidth - thumbnailWidth) / 2 - 2)
                         
                         //high score
@@ -76,6 +77,7 @@ struct YTView: View {
                                     scrollListGradientLineX -= Constants.screenWidth * 0.66
                                 }
                                 showScrollList = true
+                                previewAudio = false
                             }
                             
                         }, label: {
@@ -94,8 +96,8 @@ struct YTView: View {
                         Button(action: {
                             
                             if showScrollList == true && selectedVideoInfo.videoId != "" {
-                                refresh += 1
                                 //video list is showing
+                                refresh += 1
                                 videoContent.getYTVideoContent(videoId: selectedVideoInfo.videoId)
                                 videoContent.getYTVideoDuration(videoId: selectedVideoInfo.videoId)
                                 withAnimation(.easeIn(duration: 0.2)) {
@@ -106,6 +108,7 @@ struct YTView: View {
                                     videoDetailsX -= Constants.screenWidth * 0.66
                                 }
                                 showScrollList = false
+                                previewAudio = true
                             }
                             
                         }, label: {
@@ -141,6 +144,11 @@ struct YTView: View {
                         .position(x: scrollListX, y: detectPosition)
                         .onAppear{
                             imageData = Data()
+                            showScrollList = true
+                            scrollListX = Constants.screenWidth * 0.74
+                            scrollListGradientLineX = Constants.screenWidth * 0.97
+                            videoDetailsX = Constants.screenWidth * 1.425
+                            previewAudio = false
                         }
                         .hueRotation(determineHue(combo: 0))
                 }
@@ -149,6 +157,11 @@ struct YTView: View {
                         .position(x: scrollListX, y: detectPosition)
                         .onAppear{
                             imageData = Data()
+                            showScrollList = true
+                            scrollListX = Constants.screenWidth * 0.74
+                            scrollListGradientLineX = Constants.screenWidth * 0.97
+                            videoDetailsX = Constants.screenWidth * 1.425
+                            previewAudio = false
                         }
                         .hueRotation(determineHue(combo: 0))
                 }

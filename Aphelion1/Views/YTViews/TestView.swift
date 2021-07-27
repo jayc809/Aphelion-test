@@ -51,30 +51,6 @@ struct YTRepresented : UIViewRepresentable {
     
 }
 
-struct YTAudioPreview: View {
-
-    var videoId: String
-    @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
-
-    var body: some View {
-        let ytManager = YTManager(videoID: videoId, preview: true)
-        YTRepresented(player: ytManager.player)
-            .onReceive(timer, perform: { _ in
-                ytManager.player.videoLoadedFraction { fraction, error in
-                    if fraction >= 0.05 {
-                        timer.upstream.connect().cancel()
-                    }
-                    else if fraction >= 0 {
-                        ytManager.play()
-                    }
-                }
-            })
-            .allowsHitTesting(false)
-            .frame(width: 1, height: 1)
-            .opacity(0)
-    }
-}
-
 struct TestPlayYTVideo: View {
     
     @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()

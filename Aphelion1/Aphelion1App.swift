@@ -12,7 +12,6 @@ struct Aphelion1App: App {
     var body: some Scene {
         WindowGroup {
             YTView()
-            //YTAudioPreview(videoId: ghostId)
             //TestPlayYTVideo()
         }
     }
