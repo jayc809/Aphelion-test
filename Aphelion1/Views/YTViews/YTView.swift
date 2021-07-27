@@ -21,6 +21,9 @@ struct YTView: View {
     @State var videoDetailsX = Constants.screenWidth * 1.425
     @State var refresh = 0
     @State var previewAudio = false
+    @State var loop = 0
+    @State var _brightness = videoBrightness
+    @State var _saturation = videoSaturation
     
     @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     
@@ -34,12 +37,18 @@ struct YTView: View {
             ZStack {
                 
                 //background
+                if loop % 2 == 0 {
+                    LoopVideo()
+                        .frame(width: Constants.screenWidth, height: Constants.screenHeight)
+                        .ignoresSafeArea()
+                }
+                else {
+                    LoopVideo()
+                        .frame(width: Constants.screenWidth, height: Constants.screenHeight)
+                        .ignoresSafeArea()
+                }
                 
-                LoopVideo()
-                    .frame(width: Constants.screenWidth, height: Constants.screenHeight)
-                    .ignoresSafeArea()
-                
-                VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration:videoContent.ytVideoDuration.duration, published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16, refresh: $refresh)
+                VideoDetailsView(title: selectedVideoInfo.videoName, channel: selectedVideoInfo.channelName, duration:videoContent.ytVideoDuration.duration, published: videoContent.ytVideoContent.published, description: videoContent.ytVideoContent.description, width: Constants.screenWidth * 0.4, fontSize: 16, refresh: $refresh, _brightness: $_brightness, _saturation: $_saturation)
                     .position(x: videoDetailsX, y: Constants.screenHeight * 0.5)
                 
                 //info stack
@@ -50,7 +59,7 @@ struct YTView: View {
                     //thumbnail and high score
                     ZStack {
                         //thumbnail
-                        ThumbnailElement(imageData: imageData, imageWidth: thumbnailWidth, videoId: selectedVideoInfo.videoId, previewAudio: $previewAudio)
+                        ThumbnailElement(imageData: imageData, imageWidth: thumbnailWidth, videoId: selectedVideoInfo.videoId, previewAudio: $previewAudio, _brightness: $_brightness, _saturation: $_saturation)
                             .offset(x: (infoWidth - thumbnailWidth) / 2 - 2)
                         
                         //high score
@@ -78,6 +87,7 @@ struct YTView: View {
                                 }
                                 showScrollList = true
                                 previewAudio = false
+                                loop += 1
                             }
                             
                         }, label: {
@@ -116,7 +126,7 @@ struct YTView: View {
                                 Image("ForwardButtonBackground")
                                     .resizable()
                                     .scaledToFit()
-                                Text(showScrollList == true ? "Next" : "Play")
+                                Text(showScrollList == true ? "Next" : "START!")
                                     .font(Font.system(size: 18))
                                     .foregroundColor(.black)
                                     .bold()

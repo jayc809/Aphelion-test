@@ -13,6 +13,8 @@ struct GameSettingsView: View {
     var fontSize: CGFloat
     @Binding var scroll: Int
     @Binding var showAnnotations: Int //nothing - 1, animation offset - 2, background - 3, brightness saturation - 4, audio offset - 5
+    @Binding var _brightness: Double
+    @Binding var _saturation: Double
     
     var body: some View {
         
@@ -149,7 +151,7 @@ struct GameSettingsView: View {
                                     .foregroundColor(.white)
                             })
                             Spacer()
-                            BrightnessAndSaturationButton(arrowWidth: width * 0.05)
+                            BrightnessAndSaturationButton(_brightness: $_brightness, _saturation: $_saturation, arrowWidth: width * 0.05)
                                 .frame(width: maxFrame)
                         }
                     }
@@ -204,8 +206,10 @@ struct GameSettingsView: View {
 struct GameSettingsPreview: View {
     @State var scroll = 0
     @State var showAnnotations = 1
+    @State var _brightness = 1.2
+    @State var _saturation = 1.2
     var body: some View {
-        GameSettingsView(width: 300, fontSize: 20, scroll: $scroll, showAnnotations: $showAnnotations)
+        GameSettingsView(width: 300, fontSize: 20, scroll: $scroll, showAnnotations: $showAnnotations, _brightness: $_brightness, _saturation: $_saturation)
     }
 }
 

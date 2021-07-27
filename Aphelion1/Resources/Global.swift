@@ -21,8 +21,8 @@ var divineBoostOff = false
 //Gameplay settings
 var framesAdjusted = 9
 var tileType = "Beat"
-var videoSaturation = 1.2
-var videoBrightness = -0.1
+var videoSaturation = 1.16
+var videoBrightness = -0.03
 var soundEffectsOff = false
 var audioOffset = 0
 

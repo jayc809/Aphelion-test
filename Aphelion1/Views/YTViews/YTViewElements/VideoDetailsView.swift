@@ -27,6 +27,8 @@ struct VideoDetailsView: View {
     @State var showAnnotations = 1 //nothing - 1, animation offset - 2, background - 3, brightness saturation - 4, audio offset - 5
     
     @Binding var refresh: Int
+    @Binding var _brightness: Double
+    @Binding var _saturation: Double
     
     let animationLength = 0.2
     var leftTab: CGFloat {
@@ -135,7 +137,7 @@ struct VideoDetailsView: View {
                             }
                             .position(x: detailsX, y: geometry.size.height * 0.5)
                     
-                        GameSettingsView(width: width, fontSize: fontSize, scroll: $scrollSettings, showAnnotations: $showAnnotations)
+                        GameSettingsView(width: width, fontSize: fontSize, scroll: $scrollSettings, showAnnotations: $showAnnotations, _brightness: $_brightness, _saturation: $_saturation)
                             .onAppear {
                                 settingsX = leftTab
                             }
@@ -311,8 +313,10 @@ struct VideoContentView: View {
 
 struct VideoDetailsPreview: View {
     @State var refresh = 0
+    @State var _brightness = 1.2
+    @State var _saturation = 1.2
     var body: some View {
-        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20, refresh: $refresh)
+        VideoDetailsView(title: "GHOST / 星街すいせい(official)", channel: "Suisei Channel", duration: "4:42", published: "Apr 13, 2021", description: "「GHOST」作詞：星街すいせい 作曲：佐藤厚仁(Dream Monster) 編曲：佐藤厚仁(Dream Monster) Electric Guitar,Acoustic Guitar：佐藤厚仁(Dream Monster) Electric Bass：森本練 Drums：北村望 映像：mokoppe 歌詞デザイン：紋", width: 300, fontSize: 20, refresh: $refresh, _brightness: $_brightness, _saturation: $_saturation)
     }
 }
 

@@ -60,7 +60,7 @@ struct TestPlayYTVideo: View {
     
     var body: some View {
         ZStack {
-            let ytManager = YTManager(videoID: "9kQ2GtvDV3s")
+            let ytManager = YTManager(videoID: ghostId)//"MPS1Ta1q7F4")
             YTRepresented(player: ytManager.player)
                 .onReceive(timer) { _ in
                     ytManager.player.videoLoadedFraction { fraction, error in
@@ -79,6 +79,7 @@ struct TestPlayYTVideo: View {
                         }
                     }
                 }
+                .frame(width: 480, height: 270)
                 .allowsHitTesting(false)
             
             if finishedRevealing == false {

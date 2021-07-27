@@ -13,6 +13,8 @@ struct ThumbnailElement: View {
     var imageWidth: CGFloat
     var videoId: String
     @Binding var previewAudio: Bool
+    @Binding var _brightness: Double
+    @Binding var _saturation: Double
     
     var body: some View {
         
@@ -23,10 +25,15 @@ struct ThumbnailElement: View {
                     .scaledToFill()
                     .frame(width: imageWidth, height: imageWidth * 9 / 16)
                     .background(Color.black)
+                    .brightness(_brightness)
+                    .saturation(_saturation)
             }
             else {
-                YTAudioPreview(videoId: videoId)
+                YTAudioPreview(videoId: videoId, previewAudio: $previewAudio)
                     .frame(width: imageWidth, height: imageWidth * 9 / 16)
+                    .background(Color.black)
+                    .brightness(_brightness)
+                    .saturation(_saturation)
             }
             
             Image("ThumbnailFrameGradient")
@@ -44,6 +51,7 @@ struct YTAudioPreview: View {
     var videoId: String
     @State var timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
     @State var opacity: Double = 1
+    @Binding var previewAudio: Bool
 
     var body: some View {
         let ytManager = YTManager(videoID: videoId, preview: true)
@@ -51,8 +59,15 @@ struct YTAudioPreview: View {
             YTRepresented(player: ytManager.player)
                 .onReceive(timer, perform: { _ in
                     ytManager.player.videoLoadedFraction { fraction, error in
+                        
+                        if opacity == 0 {
+                            withAnimation(.easeOut(duration: 0.5)) {
+                                previewAudio = false
+                            }
+                        }
+                        
                         if fraction >= 0.05 {
-                            timer.upstream.connect().cancel()
+                            timer = Timer.publish(every: 29, on: .current, in: .common).autoconnect()
                             withAnimation(.easeIn(duration: 0.7).delay(2)) {
                                 opacity = 0
                             }

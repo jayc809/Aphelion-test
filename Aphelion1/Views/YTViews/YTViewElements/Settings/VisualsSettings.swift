@@ -138,6 +138,8 @@ struct BrightnessAndSaturationButton: View {
     
     @State var _videoBrightness = videoBrightness
     @State var _videoSaturation = videoSaturation
+    @Binding var _brightness: Double
+    @Binding var _saturation: Double
     var arrowWidth: CGFloat
     
     var body: some View {
@@ -146,8 +148,8 @@ struct BrightnessAndSaturationButton: View {
             //brightness up
             Button(action: {
                 _videoBrightness += 0.03
+                _brightness += 0.03
                 videoBrightness += 0.03
-                
             }, label: {
                 Image(systemName: "arrowtriangle.up.fill")
                     .resizable()
@@ -159,6 +161,7 @@ struct BrightnessAndSaturationButton: View {
                 //saturation down
                 Button(action: {
                     _videoSaturation -= 0.18
+                    _saturation -= 0.18
                     videoSaturation -= 0.18
                 }, label: {
                     Image(systemName: "arrowtriangle.left.fill")
@@ -178,6 +181,7 @@ struct BrightnessAndSaturationButton: View {
                 //saturation up
                 Button(action: {
                     _videoSaturation += 0.18
+                    _saturation += 0.18
                     videoSaturation += 0.18
                 }, label: {
                     Image(systemName: "arrowtriangle.right.fill")
@@ -191,6 +195,7 @@ struct BrightnessAndSaturationButton: View {
             //brightness down
             Button(action: {
                 _videoBrightness -= 0.03
+                _brightness -= 0.03
                 videoBrightness -= 0.03
             }, label: {
                 Image(systemName: "arrowtriangle.down.fill")
