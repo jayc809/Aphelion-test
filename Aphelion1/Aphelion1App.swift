@@ -11,6 +11,7 @@ import SwiftUI
 struct Aphelion1App: App {
     var body: some Scene {
         WindowGroup {
+            //SearchBarPreview()
             YTView()
             //TestPlayYTVideo()
         }

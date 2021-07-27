@@ -79,6 +79,9 @@ struct SearchBarElement: View {
             
         }
         .frame(width: width, height: height)
+        .onTapGesture {
+            self.endTextEditing()
+        }
     }
 }
 
@@ -93,4 +96,11 @@ struct SearchBarPreview_Previews: PreviewProvider {
     static var previews: some View {
         SearchBarPreview()
     }
+}
+
+extension View {
+  func endTextEditing() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                    to: nil, from: nil, for: nil)
+  }
 }
