@@ -21,6 +21,7 @@ struct ThumbnailElement: View {
         ZStack {
             if previewAudio == false {
                 Image(uiImage: UIImage(data: imageData) ?? UIImage())
+                    .interpolation(.none)
                     .resizable()
                     .scaledToFill()
                     .frame(width: imageWidth, height: imageWidth * 9 / 16)

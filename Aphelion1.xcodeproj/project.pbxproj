@@ -150,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				6927A3E826A0496100009F90 /* YTView.swift */,
-				693E6FB026A4B7CA00C540CE /* TestView.swift */,
 				6927A3F426A0A6BB00009F90 /* YTViewElements */,
 			);
 			path = YTViews;
@@ -224,6 +223,7 @@
 		69CDAA27268E17DB00CD95A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				693E6FB026A4B7CA00C540CE /* TestView.swift */,
 				692123BE26975AD60034F6E5 /* YTViews */,
 				69CDAA2A268E180300CD95A3 /* GameView.swift */,
 				69CDAA30268E185900CD95A3 /* GameElements */,

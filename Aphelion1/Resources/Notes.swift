@@ -187,3 +187,22 @@
 //}
 //
 //
+
+//- (WKWebView *)createNewWebView {
+//  WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
+//  webViewConfiguration.allowsInlineMediaPlayback = YES;
+//  webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+//  WKWebView *webView = [[WKWebView alloc] initWithFrame:self.bounds
+//                                          configuration:webViewConfiguration];
+//  webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+//  webView.scrollView.scrollEnabled = NO;
+//  webView.scrollView.bounces = NO;
+//
+//  if ([self.delegate respondsToSelector:@selector(playerViewPreferredWebViewBackgroundColor:)]) {
+//    webView.backgroundColor = [self.delegate playerViewPreferredWebViewBackgroundColor:self];
+//    if (webView.backgroundColor == [UIColor clearColor]) {
+//      webView.opaque = NO;
+//    }
+//  }
+//  return webView;
+//}
